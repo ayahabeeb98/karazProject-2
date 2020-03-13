@@ -76,7 +76,7 @@ export default class ResetPassword extends React.Component {
         e.preventDefault();
         const {id, code, password, confirmPassword, errors} = this.state;
         const changedPassword = {
-            _id: id,
+            id: id,
             random: code,
             password,
             passwordConfirm: confirmPassword
@@ -86,7 +86,7 @@ export default class ResetPassword extends React.Component {
             errors["notMatch"] = "كلمتا المرور غير متطابقتين";
             this.setState(errors);
         } else {
-            axios.post('http://karaz5.herokuapp.com/api/forgetPassword/changePassword', changedPassword)
+            axios.post('http://karaz6.herokuapp.com/api/forgetPassword/changePassword', changedPassword)
                 .then(response => {
                     console.log(response)
                 })

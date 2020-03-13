@@ -13,6 +13,7 @@ import ResetPassword from "./pages/rigistration/ResetPassword";
 import VerifyAccount from "./pages/rigistration/VerifyAccount";
 import Profile from "./pages/rigistration/Profile";
 import MainDashboard from "./pages/dashboard/MainDashboard";
+import SignUp from "./pages/rigistration/signup/Signup";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
               <RouteWrapper path="/profile" component={Profile}  layout={RegisterLayout} />
 
 
+              <RouteWrapper path="/signup"  component={SignUp} layout={RegisterLayout} />
 
               <RouteWrapper path="/dashboard" exact layout={DashboardLayout} component={MainDashboard}/>
           </Switch>

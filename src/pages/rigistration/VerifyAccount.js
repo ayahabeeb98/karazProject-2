@@ -2,56 +2,58 @@ import React from 'react';
 import {Redirect} from "react-router-dom";
 import Cookies from "universal-cookie";
 import queryString from "query-string";
+import axios from 'axios';
 
-
-class VerifyAccount extends React.Component{
+class VerifyAccount extends React.Component {
     constructor() {
         super();
         this.state = {
-            msg : '',
-            userName:null,
-            verified : null,
+            msg: '',
+            verified: null,
             removed: false,
-            cookie : new Cookies()
+            cookie: new Cookies()
         }
     }
 
-    componentWillMount() {
+    UNSAFE_componentWillMount() {
         const {cookie} = this.state;
         const token = cookie.get("token");
-        if(!token) {this.props.history.push('/login')}
+        if (!token) {
+            this.props.history.push('/login')
+        }
         const query = queryString.parse(this.props.location.search);
         if (query.token) {
-            cookie.set("token", query.token , { path: '/' });
+            cookie.set("token", query.token, {path: '/'});
         }
     }
 
 
-    // componentDidMount() {
-    //     const {cookie} = this.state;
-    //     const token = cookie.get('token');
-    //     const config = {
-    //         headers: { Authorization: `Bearer ${token}` }
-    //     };
-    //
-    //     console.log(config);
-    //     axios.get('http://karaz5.herokuapp.com/api/user/profile',config)
-    //         .then(response => {
-    //             // if(response.status === 200) {
-    //             console.log(response.data);
-    //             // }
-    //             // this.setState({
-    //             //     verified:response.data.user.Account_verified,
-    //             //     userName : response.data.user.name
-    //             // });
-    //         }).catch(error => {
-    //             this.props.history.push('/login');
-    //     })
-    // }
+    componentDidMount() {
+        const {cookie} = this.state;
+        const token = cookie.get('token');
+        const config = {
+            headers: {Authorization: `Bearer ${token}`}
+        };
+
+        axios.get('http://karaz6.herokuapp.com/api/user/profile', config)
+            .then(response => {
+                console.log(response);
+                if (response.status === 200) { //if he verified his account redirect to profile
+                    this.props.history.push('/profile');
+                } else if (response.status === 201) { //authorized but not verified
+                    this.setState({
+                        verified: true,
+                    });
+                }
+            }).catch(error => {
+            console.log('error', error)
+        });
+
+    }
 
     handleClick = () => {
         const {verified} = this.state;
-        if(verified === false) {
+        if (verified === false) {
             alert("أنت لم تفعّل حسابك بعد")
         }
     };
@@ -59,17 +61,34 @@ class VerifyAccount extends React.Component{
 
     logout = () => {
         const {cookie} = this.state;
-        cookie.remove("token", { path: '/' });
-        this.setState({removed:true})
+        cookie.remove("token", {path: '/'});
+        this.setState({removed: true})
     };
 
+    sendEmail = () => {
+        const token = this.state.cookie.get('token');
+        const config = {
+            headers: { Authorization: `Bearer ${token}` }
+        };
+
+        axios.get('http://karaz6.herokuapp.com/api/verifyAccount/send',config)
+            .then(res => {
+                if (res.status === 200 ){
+                   alert("email send successfully")
+                }
+            })
+            .catch(() => {
+                console.log("error")
+            });
+
+    };
 
     render() {
-        const {verified, removed  } = this.state;
+        const {verified, removed} = this.state;
+
         return (
             <div>
-                {/*check if the user verify his email*/}
-                {!verified ?
+                {verified ?
                     <div>
                         <p className="headerText mt-3" style={{fontWeight: 'bold'}}>تأكيد الحساب</p>
                         <p className="subHeader">
@@ -77,10 +96,13 @@ class VerifyAccount extends React.Component{
                             يُرجى التحقق منه حتى تتمكن من الدخول لحسابك
                         </p>
                         <div className="choices mt-4">
-                            <button onClick={this.handleClick} className="btn btn-custom btn-notActive">الدخول الى الحساب</button>
+                            <button onClick={this.handleClick} className="btn btn-custom btn-notActive">الدخول الى
+                                الحساب
+                            </button>
 
                             {!removed ?
-                                <button  className="btn btn-custom btn-login mb-0" onClick={this.logout}>تسجيل الخروج</button>
+                                <button className="btn btn-custom btn-login mb-0" onClick={this.logout}>تسجيل
+                                    الخروج</button>
                                 :
                                 <Redirect to="/"/>
                             }
@@ -90,18 +112,22 @@ class VerifyAccount extends React.Component{
 
                         <div className="text-right choices">
                             <p className="">لم تصلني رسالة هاتف</p>
-                            <p>أرسل رسالة هاتف مرة أخرى <i className="fa fa-paper-plane icons"></i></p>
-                            <p className="pb-4">الحصول على الرمز عن طريق الايميل <i className="fa fa-envelope icons"></i></p>
+                            <p>
+                                أرسل رسالة هاتف مرة أخرى
+                                <i className="fa fa-paper-plane icons"></i>
+                            </p>
+                            <p className="pb-4" onClick={this.sendEmail} style={{cursor:"pointer"}}>
+                                الحصول على الرمز عن طريق الايميل
+                                <i className="fa fa-envelope icons"></i>
+                            </p>
                         </div>
-
                     </div>
                     :
-                    <Redirect to="/profile"/>
+                    <span className="loadingWrapper">
+                        <i className="fa fa-spinner loadingIcon"></i>
+                    </span>
                 }
-
-
             </div>
-
         );
     }
 

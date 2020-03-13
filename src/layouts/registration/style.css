@@ -35,12 +35,22 @@
     justify-content: flex-end;
     font-size: 0.73rem;
     margin-top: 0.3rem;
+    color: #FF0000;
     padding-right: 0.5rem;
 }
 
 #registration {
     font-family: 'Cairo', Arial, sans-serif;
     position: relative;
+}
+
+
+.loadingWrapper{
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #B8405E;
 }
 
 
@@ -285,6 +295,56 @@
     font-size: 0.78rem;
 }
 
+
+
+/******* Signup page Style ********/
+
+.steps {
+    width: 40%;
+    margin: auto;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.steps li:first-child:after {
+    position: absolute;
+    z-index: -11;
+    content: '';
+    justify-self: flex-start;
+    border: 2px solid #D6D6D6;
+    width: 6.5rem;
+    top: 50%;
+    left: 1rem;
+}
+
+.steps li {
+    font-size: 1.1rem;
+    position: relative;
+    padding: 0.5rem 1rem;
+    border-radius: 50%;
+    background-color: #D6D6D6;
+    color: #B8405E;
+}
+
+.steps li.active {
+    background-color: #D48D9F;
+    color: #FFFFFF;
+}
+
+#registration .createVector {
+    display: inline-block;
+    margin-top: 0.5rem;
+    text-align: center;
+    width: 27%;
+    margin-bottom: 1rem;
+}
+
+.help {
+    font-size: 0.75rem;
+    margin: 1.12rem 0;
+}
 
 /***** First Step  *****/
 .toggleInput {
@@ -532,15 +592,15 @@ span.customRadio:after {
 
 
 @media (min-width: 992px) and (max-width: 1099px) {
-    .steps {
+    #registration .steps {
         width: 55%;
     }
 
-    .or::before, .or::after {
+    #registration .or::before, .or::after {
         width: 4rem;
     }
 
-    .LoginApp {
+    #registration .LoginApp {
         min-width: unset
     }
 }
@@ -556,19 +616,19 @@ span.customRadio:after {
 }
 
 @media (max-width: 992px) {
-    .leftSide {
+    #registration .leftSide {
         display: none;
     }
 
 
-    .rightSide {
+    #registration .rightSide {
         width: 55% !important;
         margin: auto;
     }
 
 
     /*Registration Steps */
-    .steps {
+    #registration .steps {
         width: 45%;
     }
 
@@ -578,11 +638,11 @@ span.customRadio:after {
     }
 
 
-    .choices {
+    #registration .choices {
         width: 71%;
     }
 
-    .discover {
+    #registration .discover {
         margin-bottom: 1.5rem;
     }
 
@@ -612,24 +672,25 @@ span.customRadio:after {
 
 
 @media (max-width: 767px) {
-    .steps  {
+    #registration .steps  {
         display: none;
     }
 
-    .rightSide {
+    #registration .rightSide {
         width: 70% !important;
     }
 
-    .or::before, .or::after {
+    #registration .or::before,
+    #registration .or::after {
         width: 6rem;
     }
 
-    .apps {
+    #registration .apps {
         justify-content: space-evenly;
     }
 
 
-    .LoginApp {
+    #registration .LoginApp {
         min-width: 5rem;
     }
 
@@ -637,12 +698,18 @@ span.customRadio:after {
 
 
 @media (max-width: 576px) {
-    .rightSide {
+    #registration .rightSide {
         width: 90% !important;
     }
 
+    #registration .choices .btn-custom {
+        font-size: 1rem;
+        min-height: 2.5rem;
+        padding-top:0.3rem;
+    }
 
-    .or::before, .or::after {
+    #registration .or::before,
+    #registration .or::after {
         width: 4.5rem;
     }
     #mainFooter .bottom-nav{
@@ -650,7 +717,7 @@ span.customRadio:after {
         margin: 0 auto 1rem;
     }
 
-    .LoginApp .social {
+    #registration .LoginApp .social {
         display: none;
     }
 
@@ -659,17 +726,42 @@ span.customRadio:after {
         padding: .5rem 0.5rem;
     }
 
+    p {
+        font-size: .975rem;
+    }
+
+
+    .clearPassword {
+        left: 17.5%;
+    }
+
+    #registration .choices ,
+    #registration .subHeader{
+        width: 85%;
+    }
+
 
 }
 
 @media (max-width: 325px) {
-    .rightSide {
+    #registration .rightSide {
         width: 100% !important;
     }
+    p {
+        font-size: .75rem;
+    }
 
+    .custom-checkbox .checkmark:after {
+        left: 4px;
+        width: 5px;
+        height: 10px;
+    }
 
-
-    .or::before, .or::after {
+    .c {
+        font-size: 0.75rem;
+    }
+    #registration .or::before,
+    #registration .or::after {
         width: 4rem;
     }
 
@@ -677,7 +769,7 @@ span.customRadio:after {
         font-size: 0.75rem;
     }
 
-    .checkmark {
+    #registration .checkmark {
         top: 1px;
         height: 0.875rem;
         width: 0.875rem;

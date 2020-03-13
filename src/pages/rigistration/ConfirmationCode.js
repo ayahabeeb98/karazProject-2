@@ -36,8 +36,9 @@ export default class ConfirmationCode extends React.Component{
     handleSubmit = (e) => {
         e.preventDefault();
         const {id,code,errors} = this.state;
-        const verifiedCode = {_id : id,random:code};
-        axios.post('http://karaz5.herokuapp.com/api/forgetPassword/verifyCode',verifiedCode)
+        const verifiedCode = {id : id,random:code};
+        console.log(verifiedCode);
+        axios.post('http://karaz6.herokuapp.com/api/forgetPassword/verifyCode',verifiedCode)
             .then(response => {
                 if(response.status === 200) {
                     this.props.history.push({

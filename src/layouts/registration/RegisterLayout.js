@@ -22,10 +22,13 @@ const RegisterLayout = (props) => {
 
                     <div className="box text-center">
 
-                        {location === '/login' || location === '/recover' || location === '/'
+                        {location === '/login' || location === '/recover' || location === '/' ||
+                            location === '/signup' || location === '/signup/stepOne' || location === "/signup/stepTwo"
                         ?
                             <img src={logo} alt="logo" className="logo"/>
                         : null }
+
+
 
                             {props.children}
 
@@ -38,6 +41,15 @@ const RegisterLayout = (props) => {
                             </span>
                         </div> : null
                     }
+
+                    {location === '/signup' || location === '/signup/stepOne' || location === "/signup/stepTwo" ?
+                        <div className="d-flex">
+                               <span className="text-center w-100 ">
+                                   <Link to='/login' className="btn App-link">تسجيل الدخول</Link> لديك حساب؟
+                               </span>
+                        </div> : null
+                    }
+
 
                     <div className="discover text-center mt-2">
                         <p>احصل على التطبيق</p>

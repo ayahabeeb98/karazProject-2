@@ -43,7 +43,8 @@ export default class Login extends React.Component {
         }
 
         this.setState({loading: true});
-        axios.post('http://karaz5.herokuapp.com/api/user/login', user)
+
+        axios.post('http://karaz6.herokuapp.com/api/user/login', user)
             .then(Response => {
                 if (Response.status === 200) { //store token if he logged in
                     cookie.set('token', Response.data.token, {path: '/'});
@@ -52,7 +53,7 @@ export default class Login extends React.Component {
                         headers: {Authorization: `Bearer ${token}`}
                     };
 
-                    axios.get('http://karaz5.herokuapp.com/api/user/profile', config)
+                    axios.get('http://karaz6.herokuapp.com/api/user/profile', config)
                         .then(response => {
                             if (response.status === 200) { //if he verified his account redirect to profile
                                 this.props.history.push('/profile');
@@ -84,11 +85,11 @@ export default class Login extends React.Component {
 
                 <div className="choices mb-4">
                     <div className="apps">
-                        <a href="https://karaz12.herokuapp.com/auth/facebook" className="btn LoginApp text-secondary">
+                        <a href="http://karaz6.herokuapp.com/api/user/facebook" className="btn LoginApp text-secondary">
                             <img src={facebbok} alt="facebook"/>
                             <span className="social">Facebook</span>
                         </a>
-                        <a href="http://karaz5.herokuapp.com/api/user/google" className="btn LoginApp text-secondary">
+                        <a href="http://karaz6.herokuapp.com/api/user/google" className="btn LoginApp text-secondary">
                             <img src={gmail} alt="gmail"/>
                             <span className="social">Google</span>
                         </a>

@@ -3,7 +3,6 @@ import {Card, CardTitle, Col, DropdownItem, DropdownMenu,Dropdown, DropdownToggl
 import {activeUsers, newUser, visits} from '../../img/dashboard';
 import {HorizontalBar, Doughnut , Line} from 'react-chartjs-2';
 import CardBody from "reactstrap/es/CardBody";
-import UncontrolledCollapse from "reactstrap/es/UncontrolledCollapse";
 
 const data = {
     labels: ['Gaza City', 'Khan Yunis', 'Rafah', 'Deir Al Balah', 'Beit Hanoun', 'Jabalia'],
@@ -189,7 +188,7 @@ export default function MainDashboard() {
                                 Top Locations
                             </CardTitle>
                             <HorizontalBar data={data}
-                                           width={230}
+
                                            options={{
                                                scales: {
                                                    xAxes: [{
@@ -221,7 +220,7 @@ export default function MainDashboard() {
                                 Sign Up Type Traffic
                             </CardTitle>
                             <Doughnut data={DoughnutData}
-                                      width={230}
+
                                       options={{
                                           legend : {
                                               position: 'right',
