@@ -1,0 +1,402 @@
+/******** General Style ******/
+.custom-container {
+    width: 95%;
+    margin: 0 auto;
+}
+
+.form-control.inpt:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: #9C5050;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(255, 180, 246, 0.49);
+}
+
+.custom-container div.sideBarWrapper ,.custom-container div.pageContainer {
+    padding-left: 0;
+}
+
+.toggleMenuIcon {
+    position: absolute;
+    right: 1.5rem;
+    bottom: 6rem;
+    font-size: 1.3em;
+    color: #FFF;
+    padding: 0.4rem 0.875rem;
+    max-width: 5rem;
+    border-radius: 50%;
+    z-index: 4;
+    background-color: #282c34;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.5);
+    /*display: none;*/
+}
+/******* NavBar Style *******/
+
+/*Notification and messages icon*/
+.IconBar {
+    font-size: 1.5em;
+    color: #142D3B;
+    margin-top: 0.5rem;
+}
+
+/*Search Component*/
+.form-wrapper {
+    position: relative;
+}
+
+.searchIconWrapper {
+    position: absolute;
+    top: 0.4rem;
+    right: 1rem;
+    color: #A7A7A7;
+    cursor: pointer;
+    transition: color 400ms ease-in-out;
+}
+
+.searchIconWrapper:hover , .searchIconWrapper:focus {
+    color: #142D3B;
+}
+
+/*Search Input*/
+#search {
+    border-radius: 2rem;
+    padding: 0 2rem 0.2rem 0.875rem;
+}
+
+/*Search Icon*/
+.iconWrapper {
+    position: relative;
+    width: 2rem;
+    display: flex;
+    height: 1.5rem;
+}
+
+.IconBadge {
+    position: absolute;
+    font-size: 0.6rem;
+    padding: 0.1rem 0.4rem;
+    text-align: center;
+    width: fit-content;
+    background-color: #DE3163;
+    color: #FFF;
+    border-radius: 50%;
+    bottom: 0.1rem;
+    left: 0.8rem;
+}
+
+#dashboard .customArrow {
+    -webkit-appearance: none;
+    padding-right: 1.3rem;
+    border: none;
+    background-image: url("https://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png");
+    background-repeat: no-repeat;
+    background-position: right center;
+}
+
+
+/**** Header Component Style ***/
+.HeaderWrapper {
+    padding: 2rem 1rem;
+    width: 100%;
+    background-color: #142D3B;
+    color: #FFF;
+}
+
+.HeaderSectionsWrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.mainHeading {
+    font-size: 1.25rem;
+}
+
+div.breadcrumb {
+    background-color: transparent;
+    padding: .75rem 0;
+}
+
+a.headerLink{
+    color: #FFF;
+}
+
+a.headerLink:hover {
+    color: #A7A7A7;
+    text-decoration: none;
+}
+
+span.breadcrumb-item.active {
+    color: #6e8484;
+}
+
+.right-side {
+    min-width: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.right-side .headerBtn {
+    background-color: rgba(255,255,255,0.16);
+    width: 6rem;
+    border: none;
+}
+
+.right-side .headerBtn img {
+    padding-right: 0.5rem;
+}
+
+
+/**** Aside component Style ****/
+aside.mainAside , .dashboardCard {
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16);
+}
+
+
+aside.mainAside {
+    border-radius: 5px;
+    background-color: #FFF;
+    height: 100%;
+    width: 100%;
+    z-index: 10;
+}
+
+aside .asideLabel {
+    display: inline-block;
+    color: #A7A7A7;
+    font-size: 0.75rem;
+    padding-left: 1rem;
+    margin-top: 1.4rem;
+    margin-bottom: 0.6rem;
+    text-transform: capitalize;
+}
+
+aside a.asideLink {
+    color: #4B4B4B;
+    font-size: 1.125rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+aside a.asideLink.active {
+    background-color: rgba(222,49,99,0.15);
+}
+
+aside span.asideBadge {
+    border-radius: 15px;
+    background-color: #DE3163;
+    color: #FFF;
+    font-size: 0.75rem;
+    justify-self: center;
+    align-self: center;
+    padding: 0.2rem 0.6rem 0.3rem;
+}
+
+/**** Main dashboard Style ***/
+.dashboardCard {
+    position: relative;
+}
+
+.cardTitle {
+    margin-left: 2rem;
+}
+
+.duration {
+    position: absolute;
+    font-size: 0.6rem;
+    top: 2.5rem;
+    left: 3.3rem;
+}
+
+.cardIcon {
+    position: absolute;
+    top: 1.3rem;
+    left: 1.5rem;
+}
+
+.cardMenu {
+    cursor: pointer;
+    position: absolute!important;
+    top: 1.5rem;
+    right: 1.3rem;
+}
+
+.cardMenu a {
+    padding: 0.3rem 0.5rem;
+}
+
+p.description {
+    color: #A7A7A7;
+}
+
+p.description i{
+    font-size: 0.8em;
+}
+
+.dashboardCard p:last-of-type {
+    margin-bottom: 0;
+}
+
+.dashboardCard p.cardLinks {
+    display: flex;
+    justify-content: space-between;
+    width: 55%;
+    color: #A7A7A7;
+}
+
+.dashboardCard p.cardLinks span {
+    cursor: pointer;
+    position: relative;
+    font-size: 0.75rem;
+}
+
+.dashboardCard p.cardLinks span:hover ,p.cardLinks span.active {
+    color: #00820F;
+}
+
+
+.dashboardCard p.cardLinks span:after {
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 0;
+    position: absolute;
+    background: #00820F;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+}
+.dashboardCard p.cardLinks span:hover:after,  p.cardLinks span.active:after  {
+    width: 30%;
+    margin: 0 auto;
+    left: 0.75rem;
+}
+
+.description .rate.up {
+    color: #109A1E;
+}
+
+.description .rate.down {
+    color: #CF0505;
+}
+
+
+.sideMenu {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 75%;
+    height: 100vh;
+    color: white;
+}
+
+.sideMenuIcon {
+    display: inline-block;
+    margin-left: 1.3rem;
+    padding-top: 1.25rem;
+    padding-bottom: 0.75rem;
+    font-size: 1.3em;
+    color: #142D3B;
+    cursor: pointer;
+}
+
+#mobileMenu {
+    border-top: 1px solid #707070;
+    box-shadow: 0 3px 6px #142D3B;
+    position: absolute;
+    opacity: 0;
+    display: none;
+    padding: 1rem;
+
+}
+
+@keyframes leftToRight {
+    0% {
+        left: -500px;
+    }
+
+    100% {
+        left: 0;
+    }
+}
+
+#mobileMenu.open {
+    animation-name: leftToRight;
+    animation-duration: 600ms;
+    display: block;
+    opacity: 1;
+    left: 0;
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    color: #000;
+    z-index: 5;
+
+}
+
+
+/****** Responsive ******/
+
+@media (min-width: 567px ) {
+    .sideMenu {
+        display: none;
+    }
+}
+@media (max-width: 992px) {
+
+}
+
+
+@media (max-width: 768px) {
+    .dashboardCard {
+        margin-bottom: 0.875rem;
+    }
+
+}
+
+
+@media (max-width: 576px) {
+    .sideMenu {
+        display: block;
+    }
+
+    .custom-container {
+        width: 100%;
+    }
+
+    .navbar-light .navbar-brand {
+        display: none!important;
+    }
+
+    .navbar-nav .nav-item {
+        margin-right: unset !important;
+    }
+
+    .form-wrapper.form-group {
+        width: 90% !important;
+    }
+
+    .HeaderSectionsWrapper {
+        flex-direction: column;
+    }
+
+    .custom-container div.sideBarWrapper {
+        display: none;
+        flex: unset;
+        max-width: unset;
+    }
+
+    .custom-container div.pageContainer{
+        flex: 0 95%;
+        max-width: 95%;
+        padding-left: 15px;
+    }
+
+
+
+}
+
+@media (max-width: 375px) {
+
+}

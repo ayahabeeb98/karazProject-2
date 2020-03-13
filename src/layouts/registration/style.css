@@ -1,0 +1,685 @@
+@keyframes topLabel {
+    0% {
+        top: 0;
+    }
+
+    100% {
+        top: -7px;
+    }
+}
+
+@keyframes rotate-s-loader {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.noSelect {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none;
+}
+
+.loadingIcon {
+    animation: rotate-s-loader 1s linear infinite;
+}
+
+
+.errorMsg {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 0.73rem;
+    margin-top: 0.3rem;
+    padding-right: 0.5rem;
+}
+
+#registration {
+    font-family: 'Cairo', Arial, sans-serif;
+    position: relative;
+}
+
+
+/******* Slider Style ******/
+#registration .carousel-caption, .carousel-indicators {
+    left: unset;
+    right: 12%;
+    bottom: 15%;
+    text-align: right;
+}
+
+
+.carousel-indicators {
+    margin-right: unset;
+    bottom: 4rem;
+}
+
+.carousel-indicators li {
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.carousel-indicators .active {
+    background-color: #CC5775;
+}
+
+#registration .carousel-caption h3,
+#registration .carousel-caption p {
+    font-size: 1.5rem;
+}
+
+.carousel,
+.carousel-inner,
+.carousel-item,
+.carousel-item img{
+    height: 100%;
+}
+
+
+/****** Register Layout Style ******/
+#registration .box {
+    border-radius: 2.125rem;
+    border: 1px solid #C8C8C8;
+    box-shadow: 3px 0 6px rgba(0, 0, 0, 0.16);
+    height: fit-content;
+    width: 90%;
+    margin: 1.875rem auto 1rem auto;
+}
+
+#registration .logo {
+    margin-top: 2rem;
+    width: 35%;
+}
+
+
+
+/****** Home page Style ******/
+
+#registration .choices {
+    width: 70%;
+    margin: 0 auto;
+}
+
+
+#registration .choices .btn-custom {
+    min-height: 3rem;
+    border-radius: 0.5rem;
+    font-size: 1.125rem;
+    width: 100%;
+    font-weight: 400;
+    margin-bottom: 1rem;
+    background-color: #FFFFFF;
+    border: 2px solid #CCCCCC;
+    color: #CC5775;
+    padding-top: 0.5rem;
+    transition: all 300ms ease-in-out;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+}
+
+#registration .choices .btn-custom:last-of-type {
+    margin-bottom: 2.5rem;
+}
+
+#registration .choices .btn-login {
+    border: none;
+    background-color: #CC5775;
+    color: #FFFFFF;
+}
+
+#registration .choices .btn-custom:hover {
+    background-color: #EFEFF4;
+    color: #B8405E;
+    border: 2px solid #EFEFF4;
+}
+
+#registration .choices .btn-login:hover {
+    background-color:#B8405E;
+    color: #FFFFFF;
+    border: none;
+}
+
+#registration .btn-custom.btn-notActive {
+    border: 2px solid #CC5775;
+    transition: all 500ms ease-in-out;
+}
+
+#registration button.btn-notActive:enabled {
+    background-color: #CC5775;
+    color: #FFFFFF;
+}
+
+#registration .discover {
+    margin-bottom: 3.5rem;
+}
+
+
+
+#registration .discover .app {
+    width: 35%;
+}
+
+/*Login Page*/
+
+#registration .headerText {
+    font-weight: bold;
+    color: #B8405E;
+}
+
+#registration .apps {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: 0.5rem;
+}
+
+#registration .LoginApp {
+    min-width: 7.75rem;
+    background-color: #FFFFFF;
+    border: 1px solid #F5F5F5;
+    box-shadow: 3px 0 6px rgba(0, 0, 0, 0.16);
+}
+
+#registration .LoginApp:hover {
+    background-color: #E4E4E4;
+    border: 1px solid #EFEFF4;
+}
+
+
+#registration .LoginApp img {
+    display: inline-block;
+    margin-right: 0.5rem;
+}
+
+#registration .or {
+    font-size: 0.5rem;
+    color: #CCCCCC;
+}
+
+#registration .or::before,
+#registration .or::after {
+    display: inline-block;
+    content: "";
+    border-top: 1px dashed #CCCCCC;
+    width: 7rem;
+    margin-right: 0.8rem;
+    margin-left: .8rem;
+}
+
+
+#registration .custom-form-group {
+    position: relative;
+}
+
+#registration .mainForm {
+    margin-top: 1rem;
+}
+
+#registration .form-control::placeholder {
+    text-align: right;
+    font-weight: 600;
+    color: #CCCCCC;
+}
+
+#registration .custom-input {
+    background-color: #FFFFFF;
+    border: 2px solid #CCCCCC;
+    border-radius: 0.5rem;
+    text-align: right;
+    height: unset;
+}
+
+
+#registration .custom-input.error {
+    border: 2px solid #FF0000;
+}
+
+#registration .custom-input.success {
+    border: 2px solid #08BF32;
+}
+
+#registration .topLabel {
+    display: inline-block !important;
+    position: absolute;
+    font-size: 10px;
+    background-color: #FFFFFF;
+    right: 5%;
+    padding: 0 0.125rem;
+    animation: topLabel 400ms forwards;
+}
+
+
+#registration .custom-input:focus {
+    color: #495057;
+    background-color: #FFFFFF;
+    border-color: #B8405E;
+    outline: 0;
+    box-shadow: none;
+}
+
+
+.clear, .clearPassword {
+    position: absolute;
+    color: #E3E2E2;
+    cursor: pointer;
+    font-size: 1.3em;
+}
+
+.clear , .clearPassword {
+    left: 3%;
+    top: 10%;
+}
+
+.clearPassword {
+    left: 15%;
+}
+
+.togglePassword {
+    position: absolute;
+    top: 7%;
+    cursor: pointer;
+    left: 2%;
+    color: black;
+    font-size: 0.78rem;
+}
+
+
+/***** First Step  *****/
+.toggleInput {
+    font-size: 0.65rem;
+    width: 100%;
+    color: #2680EB;
+    cursor: pointer;
+    padding-right: 0.4rem;
+    padding-top: 0.25rem;
+}
+
+#toggleGroup-p {
+    display: none;
+}
+
+
+.conditions {
+    color: #CCCCCC;
+    font-size: 0.875rem;
+    margin-top: 1rem;
+}
+
+.conditions li.success {
+    color: #08BF32;
+}
+
+.conditions li.failed {
+    color: #FF0000;
+}
+
+.checkbox-wrapper {
+    margin-right: 0.99rem;
+}
+
+.custom-checkbox {
+    display: block;
+    position: relative;
+    margin-bottom: 12px;
+    font-size: 0.89rem;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    vertical-align: middle;
+}
+
+
+.custom-checkbox .default-check {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    right: -0.875rem;
+    height: 1.3rem;
+    width: 1.3rem;
+    background-color: #FFFFFF;
+    border: 1px solid #CC5775;
+}
+
+/* On mouse-over, add a grey background color */
+.custom-checkbox:hover input.default-check ~ .checkmark {
+    background-color: #E4E4E4;
+}
+
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.custom-checkbox input.default-check:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.custom-checkbox .checkmark:after {
+    left: 6px;
+    top: 0;
+    width: 8px;
+    height: 15px;
+    border: solid #B8405E;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+/***** Recover page style *****/
+.found {
+    margin: 4rem 0;
+}
+
+
+/****** Confirm Options *****/
+
+#registration .subHeader {
+    font-weight: bold;
+    margin: auto;
+    width: 70%;
+}
+
+#registration .description {
+    width: 60%;
+    margin: 1rem auto;
+}
+
+#registration .btn-custom.btn-gray {
+    background-color: #DDDEE3;
+    color: #FFFFFF;
+    font-size: 0.875rem;
+    font-weight: bold;
+}
+
+
+#registration .options {
+    width: 80%;
+    margin: auto;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+    border-radius: 1rem;
+}
+
+#registration .media .userName {
+    color: #7F8189;
+    font-size: 1.125rem;
+    padding-top: 0.3rem;
+    margin-bottom: 0.3rem;
+    vertical-align: middle;
+}
+
+.custom-checkbox .mainLabel {
+    color: #7F8189;
+    font-size: 1.125rem;
+}
+
+.media .userRole {
+    color: #A9AAAF;
+    font-size: 0.875rem;
+}
+
+.custom-checkbox .labelValue {
+    color: #999BA0;
+    font-size: 0.75rem;
+}
+
+.customRadio {
+    position: absolute;
+    top: 25%;
+    left: 0;
+    height: 1.5rem;
+    width: 1.5rem;
+    background-color: #eee;
+    border: 3px solid #7F7F7F;
+    border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.custom-checkbox:hover input ~ .customRadio {
+    background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.custom-checkbox input:checked ~ span.customRadio {
+    background-color: #FFFFFF;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+span.customRadio:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.custom-checkbox input:checked ~ span.customRadio:after {
+    display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.custom-checkbox span.customRadio:after {
+    top: 3px;
+    left: 3px;
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 50%;
+    background: #CC5775;
+}
+
+#registration .line {
+    width: 80%;
+    margin: 1rem auto;
+    background-color: #B0B0B0
+}
+
+#registration .icons {
+    color: #CC5775;
+    font-size: 1.2em;
+    margin-left: 0.5rem;
+}
+
+/******** Footer Style ********/
+
+#mainFooter {
+    width: 100%;
+    margin: 0 auto;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    flex-direction: row;
+}
+
+#mainFooter .bottom-nav {
+    width: 60%;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    margin-bottom: 1rem;
+
+}
+
+#mainFooter .bottom-nav a {
+    color: #FFF;
+}
+
+#mainFooter .bottom-nav a:hover {
+    color: rgba(0,0,0,0.9);
+}
+
+#mainFooter .copyRight {
+    width: 35%;
+    margin-left: auto;
+    text-align: center;
+    padding: .5rem 1rem
+}
+
+
+/*****  Responsive Breakpoint *****/
+
+
+@media (min-width: 992px) and (max-width: 1099px) {
+    .steps {
+        width: 55%;
+    }
+
+    .or::before, .or::after {
+        width: 4rem;
+    }
+
+    .LoginApp {
+        min-width: unset
+    }
+}
+
+@media (min-width: 935px) and  (max-width: 992px) {
+    .steps {
+        width: 40% !important;
+    }
+
+    .steps li:first-child:after {
+        width: 11rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .leftSide {
+        display: none;
+    }
+
+
+    .rightSide {
+        width: 55% !important;
+        margin: auto;
+    }
+
+
+    /*Registration Steps */
+    .steps {
+        width: 45%;
+    }
+
+    .steps li:first-child:after {
+        width: 10.3rem;
+        left: 0;
+    }
+
+
+    .choices {
+        width: 71%;
+    }
+
+    .discover {
+        margin-bottom: 1.5rem;
+    }
+
+    /*Footer Responsive*/
+    #mainFooter {
+        margin-top: 1rem;
+        position: unset;
+        flex-direction: column-reverse;
+    }
+
+    #mainFooter .bottom-nav{
+        width: 70%;
+        justify-content: center;
+        margin: 0 auto 1rem;
+    }
+
+    #mainFooter .bottom-nav a {
+        color: #282c34;
+    }
+
+    #mainFooter .copyRight {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+}
+
+
+@media (max-width: 767px) {
+    .steps  {
+        display: none;
+    }
+
+    .rightSide {
+        width: 70% !important;
+    }
+
+    .or::before, .or::after {
+        width: 6rem;
+    }
+
+    .apps {
+        justify-content: space-evenly;
+    }
+
+
+    .LoginApp {
+        min-width: 5rem;
+    }
+
+}
+
+
+@media (max-width: 576px) {
+    .rightSide {
+        width: 90% !important;
+    }
+
+
+    .or::before, .or::after {
+        width: 4.5rem;
+    }
+    #mainFooter .bottom-nav{
+        width: 100%;
+        margin: 0 auto 1rem;
+    }
+
+    .LoginApp .social {
+        display: none;
+    }
+
+    #mainFooter .bottom-nav a {
+        font-size: .875rem;
+        padding: .5rem 0.5rem;
+    }
+
+
+}
+
+@media (max-width: 325px) {
+    .rightSide {
+        width: 100% !important;
+    }
+
+
+
+    .or::before, .or::after {
+        width: 4rem;
+    }
+
+    .c , .custom-checkbox{
+        font-size: 0.75rem;
+    }
+
+    .checkmark {
+        top: 1px;
+        height: 0.875rem;
+        width: 0.875rem;
+    }
+}
