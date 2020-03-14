@@ -1,8 +1,9 @@
-import React,{useState} from 'react';
+import React,{useState , useEffect} from 'react';
 import {Card, CardTitle, Col, DropdownItem, DropdownMenu,Dropdown, DropdownToggle, Row} from 'reactstrap';
 import {activeUsers, newUser, visits} from '../../img/dashboard';
 import {HorizontalBar, Doughnut , Line} from 'react-chartjs-2';
 import CardBody from "reactstrap/es/CardBody";
+import axios from 'axios';
 
 const data = {
     labels: ['Gaza City', 'Khan Yunis', 'Rafah', 'Deir Al Balah', 'Beit Hanoun', 'Jabalia'],
@@ -81,6 +82,7 @@ const LineData = {
     ]
 };
 
+
 const DropDownList = (props) => {
     return (
         <Dropdown isOpen={props.isOpen} className="cardMenu" toggle={props.toggle}>
@@ -89,8 +91,8 @@ const DropDownList = (props) => {
             </DropdownToggle>
             <DropdownMenu right className="p-0">
                 <DropdownItem onClick={props.onClick}>Last day</DropdownItem>
-                <DropdownItem>Last week</DropdownItem>
-                <DropdownItem>Last month</DropdownItem>
+                <DropdownItem>Current month</DropdownItem>
+                <DropdownItem>Current year</DropdownItem>
                 <DropdownItem>Calender</DropdownItem>
             </DropdownMenu>
         </Dropdown>
@@ -98,17 +100,57 @@ const DropDownList = (props) => {
 };
 
 export default function MainDashboard() {
+    const now = new Date();
+    const offsetMs = now.getTimezoneOffset() * 60 * 1000;
+    const dateLocal = new Date(now.getTime() - offsetMs);
+    const str = dateLocal.toISOString().slice(0, 19).replace("T", " ");
+    const Defaultduration = dateLocal.toISOString().slice(0,10);
+
     const [dropdownOpen, setDropdownOpen] = useState(false);
     const [dropdownOpenTwo, setDropdownOpenTwo] = useState(false);
     const [dropdownOpenTh, setDropdownOpenTh] = useState(false);
-    const [total , setTotal] = useState('23.5k');
+    const [duration,setDuration] = useState(Defaultduration);
+    const [total , setTotal] = useState('23.5');
+    const [rate,setRate] = useState('17.3%');
     const toggle = () => setDropdownOpen(prevState => !prevState);
     const toggleTwo = () => setDropdownOpenTwo(prevState => !prevState);
     const toggleTh = () => setDropdownOpenTh(prevState => !prevState);
 
-    const changeData = () => {
-        setTotal('200k')
+
+    useEffect(() => {
+        const reqData = {date:str,type:"day"};
+        axios.post('https://karaz6.herokuapp.com/api/dashboard/count',reqData)
+            .then( response  =>{
+                setTotal(response.data.result);
+                const pre = Math.round(response.data.precentage * 100)/100;
+                setRate(pre);
+            })
+            .catch(error => {console.log(error)})
+    } , []);
+
+    const changeData = (type) => {
+        const reqData = {date:str,type};
+        switch (type) {
+            case "day":
+                setDuration(Defaultduration);
+                break;
+            case "month":
+            case "year":
+                setDuration(" last " + type);
+                break;
+            default:
+                setDuration(Defaultduration)
+        }
+        axios.post('https://karaz6.herokuapp.com/api/dashboard/count',reqData)
+            .then( response  =>{
+                setTotal(response.data.result);
+                const pre = Math.round(response.data.precentage * 100)/100;
+                setRate(pre);
+            })
+            .catch(error => {console.log(error)})
     };
+
+
 
 
     return (
@@ -119,8 +161,8 @@ export default function MainDashboard() {
                         <CardTitle className="cardTitle">
                             Visits
                         </CardTitle>
-
-                        <h3 className="cardNumber mt-1" id="cardNumber">{total}</h3>
+                        <span className="duration">Duration</span>
+                        <h3 className="cardNumber mt-1" id="cardNumber">17.2k</h3>
                         <p className="description">
                             <span className="rate up">
                                 <i className="fa fa-arrow-up"></i>  12.5%
@@ -131,21 +173,23 @@ export default function MainDashboard() {
                             <img src={visits} alt="newUser"/>
                         </span>
 
-                        <DropDownList isOpen = {dropdownOpen} onClicl={changeData} toggle={toggle} />
+                        <DropDownList isOpen = {dropdownOpen} toggle={toggle} />
 
 
 
                     </Card>
                 </Col>
+
                 <Col className="pr-0">
                     <Card body className="dashboardCard">
                         <CardTitle className="cardTitle">
                             New Users
                         </CardTitle>
-                        <h3 className="cardNumber mt-1">238k</h3>
+                        <span className="duration">During {duration}</span>
+                        <h3 className="cardNumber mt-1">{total}</h3>
                         <p className="description">
-                            <span className="rate up">
-                                <i className="fa fa-arrow-up"></i>  30.7%
+                            <span className={rate <= 0 ? "rate down" : "rate up" }>
+                                {rate <= 0 ? <i className="fa fa-arrow-down"></i> : <i className="fa fa-arrow-up"></i> } {rate}
                             </span>  Up From Last Month.
                         </p>
                         <p className="targetNumber">1254 Target Users</p>
@@ -153,9 +197,22 @@ export default function MainDashboard() {
                             <img src={newUser} alt="newUser"/>
                         </span>
                     </Card>
-                    <DropDownList isOpen = {dropdownOpenTwo} onClicl={changeData} toggle={toggleTwo} />
+                    <Dropdown isOpen={dropdownOpenTwo} className="cardMenu" toggle={toggleTwo}>
+                        <DropdownToggle tag="a">
+                            <i className="fa fa-ellipsis-v"></i>
+                        </DropdownToggle>
+                        <DropdownMenu right className="p-0">
+                            <DropdownItem onClick={()=>changeData("day")}>Last day</DropdownItem>
+                            <DropdownItem onClick={()=>changeData("month")}>Current month</DropdownItem>
+                            <DropdownItem onClick={()=>changeData("year")}>Current year</DropdownItem>
+                            <DropdownItem>Calender</DropdownItem>
+                        </DropdownMenu>
+                    </Dropdown>
+
 
                 </Col>
+
+
                 <Col className="pr-0">
                     <Card body className="dashboardCard">
                         <CardTitle className="cardTitle">
@@ -174,7 +231,7 @@ export default function MainDashboard() {
                             <img src={activeUsers} alt="newUser"/>
                         </span>
 
-                        <DropDownList isOpen = {dropdownOpenTh} onClicl={changeData} toggle={toggleTh} />
+                        <DropDownList isOpen = {dropdownOpenTh}  toggle={toggleTh} />
 
                     </Card>
                 </Col>

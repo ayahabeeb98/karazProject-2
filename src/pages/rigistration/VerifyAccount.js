@@ -35,7 +35,7 @@ class VerifyAccount extends React.Component {
             headers: {Authorization: `Bearer ${token}`}
         };
 
-        axios.get('http://karaz6.herokuapp.com/api/user/profile', config)
+        axios.get('https://karaz6.herokuapp.com/api/user/profile', config)
             .then(response => {
                 console.log(response);
                 if (response.status === 200) { //if he verified his account redirect to profile

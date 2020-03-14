@@ -740,6 +740,10 @@ span.customRadio:after {
         width: 85%;
     }
 
+    .custom-checkbox .mainLabel {
+        font-size: 1rem;
+    }
+
 
 }
 

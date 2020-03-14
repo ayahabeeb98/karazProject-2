@@ -14,6 +14,7 @@ export default class ResetPassword extends React.Component {
             id: '',
             code: '',
             errors: {},
+            loading:false,
             togglePassword: true
         }
     }
@@ -88,10 +89,11 @@ export default class ResetPassword extends React.Component {
         } else {
             axios.post('https://karaz6.herokuapp.com/api/forgetPassword/changePassword', changedPassword)
                 .then(response => {
-                    console.log(response)
+                    this.props.history.push('/login');
                 })
                 .catch(error => {
-                    console.log(error)
+                    errors["serverError"] = "يُرجى التأكد من البيانات المدخلة والمحاولة مجددًا.";
+                    this.setState({loading: false, errors});
                 })
         }
     };
@@ -102,7 +104,7 @@ export default class ResetPassword extends React.Component {
         //Apply the validation when the user start typing
         this.checkPassword();
         this.resetPassword();
-        const {password, confirmPassword, togglePassword, errors} = this.state;
+        const {password, confirmPassword, togglePassword,loading, errors} = this.state;
 
         return (
             <div>
@@ -114,6 +116,12 @@ export default class ResetPassword extends React.Component {
 
                 <div className="choices mt-4">
                     {/* MessageError */}
+                    {errors["serverError"] ?
+                        <div className="alert alert-danger px-1" role="alert">
+                                <span className="errorMsg text-right text-danger">
+                                    {errors["serverError"]}</span>
+                        </div> : null}
+
                     {errors["notMatch"] ?
                         <div className="alert alert-danger px-1" role="alert">
                                 <span className="errorMsg text-right text-danger">
@@ -167,8 +175,9 @@ export default class ResetPassword extends React.Component {
                         </FormGroup>
 
                         <button type="submit" className="btn btn-custom btn-notActive"
-                                disabled={password && confirmPassword && this.checkPassword() ? false : "disabled"}>
-                            إنشاء الحساب
+                                disabled={password && confirmPassword && this.checkPassword()&& !loading ? false : "disabled"}>
+                            {loading ? <i className="fa fa-spinner loadingIcon"></i> : "تغيير كلمة المرور"}
+
                         </button>
 
                     </Form>
