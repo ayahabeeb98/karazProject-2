@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="26d1cdd8-5987-4780-8ed1-d6b87afd2b70" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/dashboard/Cards.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layouts/registration/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/registration/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/dashboard/MainDashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/dashboard/MainDashboard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/rigistration/ResetPassword.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/rigistration/ResetPassword.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/rigistration/VerifyAccount.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/rigistration/VerifyAccount.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/rigistration/signup/StepOne.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/rigistration/signup/StepOne.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -23,11 +20,16 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/pages/dashboard/MainDashboard.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="164" column="72" lean-forward="true" selection-start-line="164" selection-start-column="72" selection-end-line="164" selection-end-column="72" />
+            <state relative-caret-position="85">
+              <caret line="120" column="58" selection-start-line="120" selection-start-column="58" selection-end-line="120" selection-end-column="58" />
               <folding>
                 <element signature="e#0#49#0" expanded="true" />
-                <element signature="e#4800#5739#0" />
+                <element signature="e#336#641#0" />
+                <element signature="e#660#837#0" />
+                <element signature="e#861#1289#0" />
+                <element signature="e#1310#2034#0" />
+                <element signature="e#2069#2635#0" />
+                <element signature="e#4834#5831#0" />
                 <element signature="e#6919#7060#0" />
                 <element signature="e#6146#8639#0" />
                 <element signature="e#8653#9002#0" />
@@ -96,8 +98,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pages/rigistration/Login.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="107" column="38" selection-start-line="103" selection-start-column="20" selection-end-line="107" selection-end-column="38" />
+            <state relative-caret-position="159">
+              <caret line="149" column="88" lean-forward="true" selection-start-line="149" selection-start-column="43" selection-end-line="149" selection-end-column="88" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -178,7 +180,6 @@
         <option value="$PROJECT_DIR$/src/components/dashboard/Chart.js" />
         <option value="$PROJECT_DIR$/public/_redirects" />
         <option value="$PROJECT_DIR$/src/pages/rigistration/Login.js" />
-        <option value="$PROJECT_DIR$/src/pages/rigistration/signup/StepOne.js" />
         <option value="$PROJECT_DIR$/src/pages/rigistration/signup/StepTwo.js" />
         <option value="$PROJECT_DIR$/src/pages/rigistration/ConfirmOptions.js" />
         <option value="$PROJECT_DIR$/src/pages/rigistration/Recover.js" />
@@ -188,11 +189,12 @@
         <option value="$PROJECT_DIR$/src/pages/rigistration/ResetPassword.js" />
         <option value="$PROJECT_DIR$/src/layouts/registration/style.css" />
         <option value="$PROJECT_DIR$/src/components/dashboard/Cards.js" />
+        <option value="$PROJECT_DIR$/src/pages/rigistration/signup/StepOne.js" />
         <option value="$PROJECT_DIR$/src/pages/dashboard/MainDashboard.js" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="676" />
     <option name="width" value="697" />
     <option name="height" value="735" />
@@ -224,13 +226,6 @@
               <item name="karaz-project" type="b2602c69:ProjectViewProjectNode" />
               <item name="karazProjectNew" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="dashboard" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="karaz-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="karazProjectNew" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -239,6 +234,21 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
               <item name="dashboard" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="karaz-project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="karazProjectNew" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="rigistration" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="karaz-project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="karazProjectNew" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="rigistration" type="462c0819:PsiDirectoryNode" />
+              <item name="signup" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -304,12 +314,12 @@
       <workItem from="1584090272793" duration="52000" />
       <workItem from="1584098330299" duration="11608000" />
       <workItem from="1584120532902" duration="13960000" />
-      <workItem from="1584174163010" duration="11578000" />
+      <workItem from="1584174163010" duration="23416000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="214375000" />
+    <option name="totallyTimeSpent" value="226213000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -321,7 +331,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19568452" />
@@ -338,7 +348,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.17021276" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.049099836" />
       <window_info anchor="bottom" id="TypeScript" order="11" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -374,7 +384,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/pages/dashboard/MainDashboard.js</url>
-          <line>294</line>
+          <line>329</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="1" />
         </line-breakpoint>
@@ -516,16 +526,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/rigistration/signup/StepOne.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-131">
-          <caret line="69" column="29" selection-start-line="69" selection-start-column="29" selection-end-line="69" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/rigistration/Recover.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -596,16 +596,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/rigistration/Login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="107" column="38" selection-start-line="103" selection-start-column="20" selection-end-line="107" selection-end-column="38" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/rigistration/ResetPassword.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -643,13 +633,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/rigistration/signup/StepOne.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="21" column="17" lean-forward="true" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/rigistration/Login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="149" column="88" lean-forward="true" selection-start-line="149" selection-start-column="43" selection-end-line="149" selection-end-column="88" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/dashboard/MainDashboard.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="164" column="72" lean-forward="true" selection-start-line="164" selection-start-column="72" selection-end-line="164" selection-end-column="72" />
+        <state relative-caret-position="85">
+          <caret line="120" column="58" selection-start-line="120" selection-start-column="58" selection-end-line="120" selection-end-column="58" />
           <folding>
             <element signature="e#0#49#0" expanded="true" />
-            <element signature="e#4800#5739#0" />
+            <element signature="e#336#641#0" />
+            <element signature="e#660#837#0" />
+            <element signature="e#861#1289#0" />
+            <element signature="e#1310#2034#0" />
+            <element signature="e#2069#2635#0" />
+            <element signature="e#4834#5831#0" />
             <element signature="e#6919#7060#0" />
             <element signature="e#6146#8639#0" />
             <element signature="e#8653#9002#0" />

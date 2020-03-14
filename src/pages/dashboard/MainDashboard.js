@@ -104,48 +104,72 @@ export default function MainDashboard() {
     const offsetMs = now.getTimezoneOffset() * 60 * 1000;
     const dateLocal = new Date(now.getTime() - offsetMs);
     const str = dateLocal.toISOString().slice(0, 19).replace("T", " ");
-    const Defaultduration = dateLocal.toISOString().slice(0,10);
+    const DefaultDuration = dateLocal.toISOString().slice(0,10);
 
-    const [dropdownOpen, setDropdownOpen] = useState(false);
-    const [dropdownOpenTwo, setDropdownOpenTwo] = useState(false);
-    const [dropdownOpenTh, setDropdownOpenTh] = useState(false);
-    const [duration,setDuration] = useState(Defaultduration);
-    const [total , setTotal] = useState('23.5');
-    const [rate,setRate] = useState('17.3%');
-    const toggle = () => setDropdownOpen(prevState => !prevState);
-    const toggleTwo = () => setDropdownOpenTwo(prevState => !prevState);
-    const toggleTh = () => setDropdownOpenTh(prevState => !prevState);
+    //Card dropDown List State
+    const [VisitsDropdownOpen , setVisitsDropdownOpen] = useState(false);
+    const [NewUserDropdownOpen, setNewUserDropdownOpenTwo] = useState(false);
+    const [ActiveUserDropdownOpen, setActiveUserDropdownOpen] = useState(false);
+    const VisitsToggle = () => setVisitsDropdownOpen(prevState => !prevState);
+    const NewUserToggle = () => setNewUserDropdownOpenTwo(prevState => !prevState);
+    const ActiveUserToggle = () => setActiveUserDropdownOpen(prevState => !prevState);
+    const [counter,setCounter] = useState(1);
+    const [loading,setLoading] = useState(false);
+    //Card data
+    const [cardData, setCardData] = React.useState([
+        {duration: DefaultDuration, total: '00', rate: '55%'},
+        {duration: DefaultDuration, total: null, rate: '55'},
+        {duration: DefaultDuration, total: '00', rate: '55%'},
+    ]);
+
+
+    const startCounting = () => {
+        setInterval(countUp, 1);
+    };
+
+
+
+    const countUp = () => {
+        const rand = Math.floor(Math.random() * 99) + 1;
+        setCounter(rand);
+    };
+
+    if(cardData[0].total){
+        startCounting();
+    }
 
 
     useEffect(() => {
         const reqData = {date:str,type:"day"};
         axios.post('https://karaz6.herokuapp.com/api/dashboard/count',reqData)
             .then( response  =>{
-                setTotal(response.data.result);
                 const pre = Math.round(response.data.precentage * 100)/100;
-                setRate(pre);
+                setCardData(prev => prev.map((c, i) => i === 1 ? ({ ...c, total: response.data.result, rate: pre }) : c ));
             })
-            .catch(error => {console.log(error)})
+            .catch(error => {console.log(error)});
+
+        console.log(cardData);
+
     } , []);
 
     const changeData = (type) => {
         const reqData = {date:str,type};
+        setLoading(true);
+        const oldCardData = cardData[1];
+        let newCardData = {...oldCardData};
         switch (type) {
-            case "day":
-                setDuration(Defaultduration);
-                break;
             case "month":
             case "year":
-                setDuration(" last " + type);
+                newCardData.duration = "this " + type;
                 break;
             default:
-                setDuration(Defaultduration)
+                newCardData.duration = DefaultDuration;
         }
         axios.post('https://karaz6.herokuapp.com/api/dashboard/count',reqData)
             .then( response  =>{
-                setTotal(response.data.result);
+                setLoading(false);
                 const pre = Math.round(response.data.precentage * 100)/100;
-                setRate(pre);
+                setCardData(prev => prev.map((c, i) => i === 1 ? ({ ...c, total: response.data.result, rate: pre }) : c ));
             })
             .catch(error => {console.log(error)})
     };
@@ -173,7 +197,7 @@ export default function MainDashboard() {
                             <img src={visits} alt="newUser"/>
                         </span>
 
-                        <DropDownList isOpen = {dropdownOpen} toggle={toggle} />
+                        <DropDownList isOpen = {VisitsDropdownOpen} toggle={VisitsToggle} />
 
 
 
@@ -185,19 +209,22 @@ export default function MainDashboard() {
                         <CardTitle className="cardTitle">
                             New Users
                         </CardTitle>
-                        <span className="duration">During {duration}</span>
-                        <h3 className="cardNumber mt-1">{total}</h3>
+                        <span className="duration">During {cardData[1].duration}</span>
+                        <h3 className="cardNumber mt-1">
+                            {!cardData[1].total ? counter : cardData[1].total}
+                        </h3>
                         <p className="description">
-                            <span className={rate <= 0 ? "rate down" : "rate up" }>
-                                {rate <= 0 ? <i className="fa fa-arrow-down"></i> : <i className="fa fa-arrow-up"></i> } {rate}
-                            </span>  Up From Last Month.
+                            <span className={cardData[1].rate <= 0 ? "rate down" : "rate up" }>
+                                {cardData[1].rate <= 0 ? <i className="fa fa-arrow-down"></i> : <i className="fa fa-arrow-up"></i> }
+                                {cardData[1].rate}%
+                            </span>  Up From {cardData[1].duration}.
                         </p>
                         <p className="targetNumber">1254 Target Users</p>
                         <span className="cardIcon">
                             <img src={newUser} alt="newUser"/>
                         </span>
                     </Card>
-                    <Dropdown isOpen={dropdownOpenTwo} className="cardMenu" toggle={toggleTwo}>
+                    <Dropdown isOpen={NewUserDropdownOpen} className="cardMenu" toggle={NewUserToggle}>
                         <DropdownToggle tag="a">
                             <i className="fa fa-ellipsis-v"></i>
                         </DropdownToggle>
@@ -209,7 +236,15 @@ export default function MainDashboard() {
                         </DropdownMenu>
                     </Dropdown>
 
-
+                    {loading ?  <span className="loading-cover" style={{
+                        display: "flex",
+                        position: "absolute",
+                        top: "35%",
+                        left: "11%",
+                        backgroundColor:"#fff"
+                    }}>
+                    <i className="fa fa-spinner loadingIcon" style={{padding:"0.5rem"}}></i>
+                </span> : null}
                 </Col>
 
 
@@ -231,7 +266,7 @@ export default function MainDashboard() {
                             <img src={activeUsers} alt="newUser"/>
                         </span>
 
-                        <DropDownList isOpen = {dropdownOpenTh}  toggle={toggleTh} />
+                        <DropDownList isOpen = {ActiveUserDropdownOpen}  toggle={ActiveUserToggle} />
 
                     </Card>
                 </Col>

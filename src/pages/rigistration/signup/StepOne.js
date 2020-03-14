@@ -30,7 +30,7 @@ export default function StepOne(props) {
         let validEmail = false;
         let validPhone = false;
         let validName = Validator("name", name,
-            /^[a-zA-Z\u0600-\u06FF]+$/, errors, "الاسم يتكون من أحرف عربية أو انجليزية فقط");
+            /^[a-zA-Z\u0600-\u06FF\s]+$/, errors, "الاسم يتكون من أحرف عربية أو انجليزية فقط");
 
         if (name.length < 3) {
             validName = false;
