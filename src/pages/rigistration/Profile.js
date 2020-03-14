@@ -24,7 +24,7 @@ class Profile extends React.Component {
             headers: {Authorization: `Bearer ${token}`}
         };
 
-        axios.get('http://karaz6.herokuapp.com/api/user/profile', config)
+        axios.get('https://karaz6.herokuapp.com/api/user/profile', config)
             .then(response => {
                 if (response.status === 200) {
                     this.setState({

@@ -93,7 +93,7 @@ export default function StepTwo(props) {
                             headers: { Authorization: `Bearer ${token}` }
                         };
 
-                        axios.get('http://karaz6.herokuapp.com/api/verifyAccount/send',config)
+                        axios.get('https://karaz6.herokuapp.com/api/verifyAccount/send',config)
                             .then(res => {
                                 if (res.status === 200 ){
                                     props.history.push('/verify-account');

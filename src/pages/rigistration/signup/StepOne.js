@@ -67,7 +67,7 @@ export default function StepOne(props) {
             //Disable next button and display loading icon
             state.handleToggle("loading");
 
-            axios.post('http://karaz6.herokuapp.com/api/user/findUser', user)
+            axios.post('https://karaz6.herokuapp.com/api/user/findUser', user)
                 .then(response => {
                     if (response.status === 200) {
                         //Reset loading status

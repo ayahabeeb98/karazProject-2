@@ -40,7 +40,7 @@ export default class ConfirmOptions extends React.Component{
         e.preventDefault();
         const {userInfo} = this.state;
         const userEmail = {email : userInfo.email};
-        axios.post('http://karaz6.herokuapp.com/api/forgetPassword/sendEmail',userEmail)
+        axios.post('https://karaz6.herokuapp.com/api/forgetPassword/sendEmail',userEmail)
             .then(Response => {
                 const id = Response.data.sucess.id;
                 this.props.history.push({

@@ -71,7 +71,7 @@ class VerifyAccount extends React.Component {
             headers: { Authorization: `Bearer ${token}` }
         };
 
-        axios.get('http://karaz6.herokuapp.com/api/verifyAccount/send',config)
+        axios.get('https://karaz6.herokuapp.com/api/verifyAccount/send',config)
             .then(res => {
                 if (res.status === 200 ){
                    alert("email send successfully")

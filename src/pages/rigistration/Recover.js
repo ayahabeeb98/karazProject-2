@@ -29,10 +29,9 @@ class Recover extends React.Component{
         } else {
             account.phone = field
         }
-        console.log(account)
-        if (field.length > 5){
 
-            axios.post('http://karaz6.herokuapp.com/api/forgetPassword/FindAccount',account)
+        if (field.length > 5){
+            axios.post('https://karaz6.herokuapp.com/api/forgetPassword/FindAccount',account)
                 .then(response => {
                     if(response.status === 200) {
                         this.props.history.push({
