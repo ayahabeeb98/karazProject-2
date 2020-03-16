@@ -107,7 +107,7 @@ export default class ResetPassword extends React.Component {
         const {password, confirmPassword, togglePassword,loading, errors} = this.state;
 
         return (
-            <div>
+            <>
                 <p className="headerText mt-3">تأكيد الحساب</p>
                 <p className="subHeader">إنشاء كلمة مرور جديدة</p>
                 <p className="description">
@@ -183,7 +183,7 @@ export default class ResetPassword extends React.Component {
                     </Form>
 
                 </div>
-            </div>
+            </>
         )
     }
 }

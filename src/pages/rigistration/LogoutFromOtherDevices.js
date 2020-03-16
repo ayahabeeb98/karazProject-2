@@ -26,7 +26,7 @@ export default class LogoutFromOtherDevices extends React.Component {
     render() {
         const {selectedOption} = this.state;
         return (
-            <div>
+            <>
                 <p className="headerText mt-3">تسجيل الخروج من الأجهزة الأخرى</p>
                 <p className="description">يمكنك تسجيل الخروج من أي جهاز
                     تعتقد أن حسابك فعال فيه</p>
@@ -64,7 +64,7 @@ export default class LogoutFromOtherDevices extends React.Component {
                     </div>
 
                 </Form>
-            </div>
+            </>
 
         );
     }

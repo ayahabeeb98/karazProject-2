@@ -14,8 +14,7 @@ export default class ConfirmationCode extends React.Component{
         }
     }
 
-    componentWillMount (){
-
+    UNSAFE_componentWillMount() {
         if(this.props.location.state === undefined) {
             this.props.history.push('/login')
         }else {
@@ -59,7 +58,7 @@ export default class ConfirmationCode extends React.Component{
         const {code,email,errors} = this.state;
 
         return (
-            <div>
+            <>
                 <p className="headerText mt-3" style={{fontWeight: 'bold' }}>تأكيد الحساب</p>
                 <p className="subHeader">أدخل الرمز الذي أرسلناه إلى </p>
                 <p className="subHeader">{email}</p>
@@ -105,7 +104,7 @@ export default class ConfirmationCode extends React.Component{
                     </div>
 
                 </Form>
-            </div>
+            </>
         )
     }
 }

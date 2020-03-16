@@ -87,9 +87,9 @@ class VerifyAccount extends React.Component {
         const {verified, removed} = this.state;
 
         return (
-            <div>
+            <>
                 {verified ?
-                    <div>
+                    <>
                         <p className="headerText mt-3" style={{fontWeight: 'bold'}}>تأكيد الحساب</p>
                         <p className="subHeader">
                             أرسلنا لك رابط التفعيل إلى بريدك الإلكتروني
@@ -121,13 +121,13 @@ class VerifyAccount extends React.Component {
                                 <i className="fa fa-envelope icons"></i>
                             </p>
                         </div>
-                    </div>
+                    </>
                     :
                     <span className="loadingWrapper">
                         <i className="fa fa-spinner loadingIcon"></i>
                     </span>
                 }
-            </div>
+            </>
         );
     }
 

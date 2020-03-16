@@ -1,10 +1,10 @@
 import React, {useContext} from 'react';
-import {facebbok, gmail} from "../../../img";
 import {Form , FormGroup} from 'reactstrap';
 import ToggleField from "./ToggleField";
 import {UserInfoContext} from "./context/UserInfoContext";
 import {Validator} from "../../../components/Functionality";
 import axios from 'axios';
+import {SocialMediaLogin} from "../SocialMediaLogin";
 
 export default function StepOne(props) {
 
@@ -55,8 +55,8 @@ export default function StepOne(props) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const {name, email, phone, errors} = state;
-        const user = {name};
+        const {email, phone, errors} = state;
+        const user = {};
         if (email.length !== 0) {
             user.email = email
         } else {
@@ -97,18 +97,7 @@ export default function StepOne(props) {
 
             <p className="headerText noSelect">إنشاء حساب بواسطة</p>
 
-            <div className="apps">
-
-                <a href="http://karaz6.herokuapp.com/api/user/facebook" className="btn LoginApp text-secondary">
-                    <img src={facebbok} alt="facebook"/>
-                    <span className="social">Facebook</span>
-                </a>
-                <a href="http://karaz6.herokuapp.com/api/user/google" className="btn LoginApp text-secondary">
-                    <img src={gmail} alt="gmail"/>
-                    <span className="social">Google</span>
-                </a>
-
-            </div>
+            <SocialMediaLogin />
 
             <span className='or noSelect'>أو</span>
 

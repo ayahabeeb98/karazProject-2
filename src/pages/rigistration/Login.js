@@ -1,9 +1,9 @@
 import React from 'react';
-import {facebbok, gmail} from '../../img'
 import {Link} from "react-router-dom";
 import {Form, FormGroup, Input} from 'reactstrap';
 import Cookies from "universal-cookie";
 import axios from 'axios';
+import {SocialMediaLogin} from "./SocialMediaLogin";
 
 export default class Login extends React.Component {
 
@@ -80,32 +80,24 @@ export default class Login extends React.Component {
         const {field, password, togglePass, errors, loading} = this.state;
 
         return (
-            <div>
+            <>
                 <p className="headerText noSelect">تسجيل دخول بواسطة</p>
 
                 <div className="choices mb-4">
-                    <div className="apps">
-                        <a href="http://karaz6.herokuapp.com/api/user/facebook" className="btn LoginApp text-secondary">
-                            <img src={facebbok} alt="facebook"/>
-                            <span className="social">Facebook</span>
-                        </a>
-                        <a href="http://karaz6.herokuapp.com/api/user/google" className="btn LoginApp text-secondary">
-                            <img src={gmail} alt="gmail"/>
-                            <span className="social">Google</span>
-                        </a>
-                    </div>
+
+                   <SocialMediaLogin />
 
 
                     <span className='or noSelect'>أو</span>
 
                     {/***** Login Form *****/}
 
-
                     {errors["serverError"] ?
                         <div className="alert alert-danger px-1" role="alert">
                                 <span className="errorMsg text-right text-danger">
                                     {errors["serverError"]}</span>
-                        </div> : null}
+                        </div> : null
+                    }
 
 
                     <Form className="mainForm" onSubmit={this.handleSubmit}>
@@ -156,7 +148,7 @@ export default class Login extends React.Component {
 
                 </div>
 
-            </div>
+            </>
 
         )
     }

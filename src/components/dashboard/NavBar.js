@@ -18,15 +18,15 @@ import Form from "reactstrap/es/Form";
 
 const NavBar = () =>
     (
-        <div style={{backgroundColor: "#FFF"}}>
-            <Navbar light expand className="custom-container">
+        <>
+            <Navbar light expand className="custom-container" style={{backgroundColor: "#FFF"}}>
                 {/** NavBar Brand **/}
                 <NavbarBrand href="/" className="mr-auto d-flex w-100">
                     <img src={logo} alt="logo"/>
                 </NavbarBrand>
 
                 {/** Search **/}
-                <Form className="w-100 justify-content-center">
+                <Form className="w-100 justify-content-center search-form">
                     <FormGroup className="w-75 mx-auto mb-0 form-wrapper">
                         <Input type="text" name="search" className="inpt" id="search" placeholder=" Search..."/>
                         <span className="searchIconWrapper"><i className="fa fa-search"></i></span>
@@ -34,6 +34,11 @@ const NavBar = () =>
                 </Form>
 
                 <Nav className="ml-auto w-100 justify-content-end" navbar>
+                    <NavItem className="mr-2 mobile-search">
+                        <NavLink href="/components/">
+                            <i className="fa fa-search IconBar"></i>
+                        </NavLink>
+                    </NavItem>
                     <NavItem className="mr-2">
                         <NavLink href="/components/">
                                 <span className="iconWrapper">
@@ -69,7 +74,7 @@ const NavBar = () =>
                     </UncontrolledDropdown>
                 </Nav>
             </Navbar>
-        </div>
+        </>
     );
 
 export default NavBar;

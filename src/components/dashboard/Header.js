@@ -1,23 +1,33 @@
 import React from 'react';
 import { Breadcrumb, BreadcrumbItem , Button} from 'reactstrap';
 import {email , print , exp} from '../../img/dashboard';
+import {Link, useLocation} from 'react-router-dom';
 
-export default function Header(props) {
+export default function Header() {
+    const location = useLocation().pathname;
     return (
         <div className="HeaderWrapper">
             <div className="custom-container HeaderSectionsWrapper">
                 <div className="left-side">
                     <h1 className="mainHeading"><i className="fa fa-desktop"></i> Dashboard</h1>
                     <Breadcrumb tag="nav" listTag="div">
-                        <BreadcrumbItem tag="a" href="#" className="headerLink">
+                        <BreadcrumbItem  tag={Link} to="/"  className="headerLink">
                             Karaz Beauty
                         </BreadcrumbItem>
-                        <BreadcrumbItem tag="a" href="#" className="headerLink">
+                        {location === '/dashboard' ?
+                        <BreadcrumbItem active tag="span" className="headerLink">
                             Dashboard
                         </BreadcrumbItem>
-                        <BreadcrumbItem active tag="span" className="headerLink">
-                            Users
-                        </BreadcrumbItem>
+                            :
+                            <>
+                                <BreadcrumbItem tag={Link} to="/dashboard" className="headerLink">
+                                    Dashboard
+                                </BreadcrumbItem>
+                                <BreadcrumbItem active tag="span" className="headerLink">
+                                    Users
+                                </BreadcrumbItem>
+                            </>
+                        }
                     </Breadcrumb>
                 </div>
 

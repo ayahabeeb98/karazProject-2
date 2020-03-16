@@ -7,30 +7,6 @@ import StepTwo from "./StepTwo";
 
 class SignUp extends React.Component {
 
-    constructor() {
-        super();
-        this.state = {
-            name: '',
-            email: '',
-            phone: '',
-            password: '',
-            checkBox: false,
-            errors: {},
-            toggleField: true, //toggle between email and phone field
-            togglePassword: true, //hide and show password
-            completeStepOne: false, //to check if the user complete step 1 before enter step 2
-            loading: false, //to display loading icon
-            updateCompleted: this.updateCompleted,
-            handleError: this.handleError,
-            updateInfo: this.updateInfo,
-            handleToggle: this.handleToggle,
-        };
-    }
-
-    // componentWillMount() {
-    //     checkAuthorizedUser(this.props, "/signup");
-    // }
-
     // To handle onChange event
     updateInfo = (label, value) => {
         this.setState({[label]: value});
@@ -58,6 +34,23 @@ class SignUp extends React.Component {
         this.setState({
             completeStepOne: true
         })
+    };
+
+    state = {
+        name: '',
+        email: '',
+        phone: '',
+        password: '',
+        checkBox: false,
+        errors: {},
+        toggleField: true, //toggle between email and phone field
+        togglePassword: true, //hide and show password
+        completeStepOne: false, //to check if the user complete step 1 before enter step 2
+        loading: false, //to display loading icon
+        updateCompleted: this.updateCompleted,
+        handleError: this.handleError,
+        updateInfo: this.updateInfo,
+        handleToggle: this.handleToggle,
     };
 
 

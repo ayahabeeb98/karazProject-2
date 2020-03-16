@@ -186,6 +186,7 @@
 }
 
 #registration .LoginApp {
+    margin: 0 0.3rem;
     min-width: 7.75rem;
     background-color: #FFFFFF;
     border: 1px solid #F5F5F5;
@@ -702,6 +703,9 @@ span.customRadio:after {
         width: 90% !important;
     }
 
+    #registration .LoginApp img {
+        margin: 0;
+    }
     #registration .choices .btn-custom {
         font-size: 1rem;
         min-height: 2.5rem;

@@ -3,6 +3,7 @@ import {Form, FormGroup, Input} from 'reactstrap';
 import axios from 'axios';
 
 class Recover extends React.Component{
+
     constructor (props) {
         super(props);
         this.state = {

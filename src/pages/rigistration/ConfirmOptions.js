@@ -62,7 +62,7 @@ export default class ConfirmOptions extends React.Component{
         if(!allowed) {return null}
         const email = encodeEmail(userInfo.email);
         return (
-            <div>
+            <>
                 <p className="headerText mt-3">تأكيد الحساب</p>
                 <p className="subHeader">سوف نرسل لك رمزاً يمكنك إستخدامه
                     لإعادة تعيين كلمة المرور</p>
@@ -113,7 +113,7 @@ export default class ConfirmOptions extends React.Component{
 
                 </Form>
 
-            </div>
+            </>
         )
     }
 }

@@ -26,11 +26,10 @@ const RegisterLayout = (props) => {
                             location === '/signup' || location === '/signup/stepOne' || location === "/signup/stepTwo"
                         ?
                             <img src={logo} alt="logo" className="logo"/>
-                        : null }
+                        : null
+                        }
 
-
-
-                            {props.children}
+                        {props.children}
 
                     </div>
 

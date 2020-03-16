@@ -9,7 +9,7 @@ class Profile extends React.Component {
     constructor() {
         super();
         this.state = {
-            msg: '',
+            verified:false,
             userName: null,
             removed: false,
             cookie: new Cookies()
@@ -28,10 +28,11 @@ class Profile extends React.Component {
             .then(response => {
                 if (response.status === 200) {
                     this.setState({
+                        verified: true,
                         userName: response.data.user.name
                     })
-                } else if (response.status === 201) { //authorized but not verified
-                    this.props.history.push('/verify-account');
+                }else {
+
                 }
             }).catch(error => {
             console.log("profile error", error)
@@ -45,10 +46,10 @@ class Profile extends React.Component {
     };
 
     render() {
-        const {userName, removed} = this.state;
-
+        const {verified,userName, removed} = this.state;
+        if(!verified) {return null}
         return (
-            <div>
+            <>
 
                 <h3 className="headerText mt-3">{userName}</h3>
                 <p className="headerText " style={{fontWeight: 'bold'}}>أهلا وسهلا بكِ في تطبيق كرز بيوتي</p>
@@ -65,7 +66,7 @@ class Profile extends React.Component {
                 </div>
 
 
-            </div>
+            </>
         );
     }
 
