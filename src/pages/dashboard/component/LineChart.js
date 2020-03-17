@@ -1,14 +1,19 @@
 import React, {useEffect, useState} from 'react';
-import {Card, CardTitle, Col, Nav, NavItem, NavLink, Row} from "reactstrap";
+import {Card, CardTitle, Col, Nav, NavItem, NavLink, Modal, ModalHeader, ModalBody, ModalFooter, Button} from "reactstrap";
 import CardBody from "reactstrap/es/CardBody";
-import {HorizontalBar, Line} from "react-chartjs-2";
+import {Line} from "react-chartjs-2";
 import axios from "axios";
+import 'react-modern-calendar-datepicker/lib/DatePicker.css';
+import DatePicker from 'react-modern-calendar-datepicker';
+import { Calendar } from "react-modern-calendar-datepicker";
+import {DateAndHour, getDates, fromDate, dateStart, fromMonth,dateStartMonth} from './';
+import {dateStartYear, fromYear} from "./DefaultDate";
 
 const initialData = {
     labels: ['JAN', 'FEB', 'MAR', 'APRIL', 'MAY', 'JUNE', 'JULY'],
     datasets: [
         {
-            label: '',
+            label: 'Users ',
             fill: false,
             lineTension: 0.3,
             borderColor: '#707070',
@@ -47,18 +52,63 @@ const options = {
 export const LineChart = () => {
 
     const [lineData, setLineData] = useState(initialData);
+    const [modal, setModal] = useState(false);
+
+    const [selectedDayRange, setSelectedDayRange] = useState({
+        from: null,
+        to: null
+    });
+
+
+    const toggle = () => setModal(!modal);
 
     useEffect(() => {
-        let copy = {...initialData};
         //Get HorizontalBar Data from API
-        // axios.get('https://karaz6.herokuapp.com/api/dashboard/sigupType')
-        //     .then(response => {
-        //         let val = Object.values(response.data);
-        //         let data = copy.datasets[0].data;
-        //         data = data.map((value, index) => data[index] = Number(val[index]));
-        //     })
-        //     .catch(error => console.log(error));
+        const labels = getDates(fromMonth,"month");
+        const reqData = {dateStart:dateStartMonth,dateEnd:DateAndHour,type:"month"};
+        let copy = {...initialData,labels};
+        axios.post('http://karaz6.herokuapp.com/api/dashboard/chart',reqData)
+            .then(response => {
+                let val = response.data.results;
+                let data = copy.datasets[0].data;
+                data = val.map((value, index) => data[index] = Number(val[index]));
+                setLineData({...copy});
+            })
+            .catch(error => console.log(error))
+
     }, []);
+
+   const handleChangeData  = (type) => {
+       let labels = '';
+        let startDate = '';
+       switch (type) {
+           case "day":
+               startDate = dateStart;
+               labels = getDates(fromDate,type);
+               break;
+           case "month":
+               startDate = dateStartMonth;
+               labels = getDates(fromMonth,type);
+               break;
+           case "year":
+               startDate = dateStartYear;
+               labels = getDates(fromYear,"year");
+               break;
+           default:
+               labels = ''
+       }
+
+       const reqData = {dateStart:startDate,dateEnd:DateAndHour,type};
+       let copy = {...initialData,labels};
+       axios.post('http://karaz6.herokuapp.com/api/dashboard/chart',reqData)
+           .then(response => {
+               let val = response.data.results;
+               let data = copy.datasets[0].data;
+               data = val.map((value, index) => data[index] = Number(val[index]));
+               setLineData({...copy});
+           })
+           .catch(error => console.log(error))
+   };
 
     return (
         <>
@@ -70,20 +120,34 @@ export const LineChart = () => {
                         </CardTitle>
                         <Nav className="lineChart-menu">
                             <NavItem>
-                                <NavLink href="#" className="chart-btn">Daily</NavLink>
+                                <NavLink href="#" className="chart-btn" onClick={()=>handleChangeData("day")}>Daily</NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink href="#" className="chart-btn">Monthly</NavLink>
+                                <NavLink href="#" className="chart-btn" onClick={()=>handleChangeData("month")}>Monthly</NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink href="#" className="chart-btn">Yearly</NavLink>
+                                <NavLink href="#" className="chart-btn" onClick={()=>handleChangeData("year")}>Yearly</NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink href="#" className="chart-btn">Calender</NavLink>
+                                <NavLink href="#" className="chart-btn" onClick={toggle}>Calender</NavLink>
                             </NavItem>
                         </Nav>
 
-                        <Line data={initialData}
+                        <Modal isOpen={modal} toggle={toggle}>
+                            <ModalHeader toggle={toggle}>Modal title</ModalHeader>
+                            <ModalBody>
+                                <Calendar
+                                    value={selectedDayRange}
+                                    onChange={setSelectedDayRange}
+                                    shouldHighlightWeekends
+                                />
+                            </ModalBody>
+                            <ModalFooter>
+                                <Button color="primary" onClick={toggle}>Do Something</Button>{' '}
+                                <Button color="secondary" onClick={toggle}>Cancel</Button>
+                            </ModalFooter>
+                        </Modal>
+                        <Line data={lineData}
                               options={options}/>
 
                     </CardBody>

@@ -15,6 +15,7 @@ import Profile from "./pages/rigistration/Profile";
 import MainDashboard from "./pages/dashboard/MainDashboard";
 import SignUp from "./pages/rigistration/signup/Signup";
 import {RouteWrapper,PrivateRoute} from "./Routes/RouteWrapper";
+import UsersData from "./pages/dashboard/UsersData";
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
               <RouteWrapper path="/signup"  component={SignUp} layout={RegisterLayout} />
 
               <RouteWrapper path="/dashboard" exact layout={DashboardLayout} component={MainDashboard}/>
+              <RouteWrapper path="/dashboard/users-data" exact layout={DashboardLayout} component={UsersData}/>
 
               {/*The redirect component only gets rendered if no other routes match first*/}
               <Redirect to='/'/>

@@ -68,12 +68,7 @@ export default function MainDashboard() {
                 console.log(error)
             });
 
-
-
-
-
     }, []);
-
 
     //Change data if the user click on the dropDown item (day,month,year)
     const changeData = (type) => {

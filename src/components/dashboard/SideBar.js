@@ -1,8 +1,9 @@
 import React from "react";
 import {Nav , NavLink , NavItem , UncontrolledCollapse } from 'reactstrap';
 import {tables} from '../../img/dashboard';
+import {Link} from "react-router-dom";
 
-const SideBar = (props) =>  {
+const SideBar = () =>  {
     return (
         <aside className="mainAside">
             <span className="asideLabel">main</span>
@@ -22,7 +23,7 @@ const SideBar = (props) =>  {
                 </NavItem>
                 <UncontrolledCollapse toggler="#tables">
                     <NavItem>
-                        <NavLink>Users data</NavLink>
+                        <NavLink tag={Link} to='/dashboard/users-data' className="asideLink pl-5">Users data</NavLink>
                     </NavItem>
                 </UncontrolledCollapse>
 
