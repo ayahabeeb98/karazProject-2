@@ -37,8 +37,7 @@ const options = {
 
 export const DoughnutChart = () => {
 
-    const [doughnutData, setDoughnutData] = useState(initialData);
-
+    const [doughnutData, setDoughnutData] = useState({});
     useEffect(() => {
         let copy = {...initialData};
         //Get DoughnutData from API
@@ -57,13 +56,10 @@ export const DoughnutChart = () => {
             <Col className="pr-0">
                 <Card className="dashboardCard">
                     <CardBody>
-
                         <CardTitle className="cardTitle">
                             Sign Up Type Traffic
                         </CardTitle>
-
-                        <Doughnut data={doughnutData} options={options} />
-
+                        <Doughnut data={doughnutData} options={options}/>
                     </CardBody>
                 </Card>
             </Col>

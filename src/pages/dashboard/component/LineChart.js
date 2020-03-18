@@ -68,7 +68,7 @@ export const LineChart = () => {
         const labels = getDates(fromMonth,"month");
         const reqData = {dateStart:dateStartMonth,dateEnd:DateAndHour,type:"month"};
         let copy = {...initialData,labels};
-        axios.post('http://karaz6.herokuapp.com/api/dashboard/chart',reqData)
+        axios.post('https://karaz6.herokuapp.com/api/dashboard/chart',reqData)
             .then(response => {
                 let val = response.data.results;
                 let data = copy.datasets[0].data;
@@ -103,7 +103,7 @@ export const LineChart = () => {
 
        const reqData = {dateStart:startDate,dateEnd:DateAndHour,type};
        let copy = {...initialData,labels};
-       axios.post('http://karaz6.herokuapp.com/api/dashboard/chart',reqData)
+       axios.post('https://karaz6.herokuapp.com/api/dashboard/chart',reqData)
            .then(response => {
                let val = response.data.results;
                let data = copy.datasets[0].data;
