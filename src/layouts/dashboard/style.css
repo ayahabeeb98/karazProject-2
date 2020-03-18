@@ -1,4 +1,18 @@
 /******** General Style ******/
+#dashboard .spinner-border.sp,
+#dashboard .spinner-border.sp-card {
+    position: absolute;
+    top: 40%;
+    left: 40%;
+}
+
+#dashboard .spinner-border.sp{
+    width: 3rem;
+    height: 3rem;
+    left: 50%;
+
+}
+
 .custom-container {
     width: 95%;
     margin: 0 auto;
@@ -368,6 +382,29 @@ p.description i{
     color: #FFF;
 }
 
+
+/***** User Data page *****/
+
+nav.user-pagination {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 0.6rem;
+}
+
+.pagination-control {
+    background-color: #EEEEEE;
+    color: #4B4B4B;
+    font-size: 1rem;
+}
+.page-link {
+    color: #878787;
+}
+
+.page-link:focus {
+    box-shadow: unset;
+    color: #000;
+}
+
 /****** Responsive ******/
 
 @media (min-width: 567px ) {
@@ -385,6 +422,20 @@ p.description i{
         margin-bottom: 0.875rem;
     }
 
+    aside a.asideLink{
+        padding-right: .3rem;
+        font-size: 0.875rem;
+    }
+
+    aside span.asideBadge {
+        padding-right: 0.4rem;
+        padding-left: 0.4rem;
+        font-size: .6rem;
+    }
+
+    aside a.asideLink .fa-desktop , aside a.asideLink img {
+        display: none;
+    }
 }
 
 

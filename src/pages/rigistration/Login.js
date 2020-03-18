@@ -4,6 +4,7 @@ import {Form, FormGroup, Input} from 'reactstrap';
 import Cookies from "universal-cookie";
 import axios from 'axios';
 import {SocialMediaLogin} from "./SocialMediaLogin";
+import {detectDevice} from "../dashboard/component/DefaultDate";
 
 export default class Login extends React.Component {
 

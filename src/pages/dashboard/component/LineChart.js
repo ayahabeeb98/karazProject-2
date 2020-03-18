@@ -4,7 +4,6 @@ import CardBody from "reactstrap/es/CardBody";
 import {Line} from "react-chartjs-2";
 import axios from "axios";
 import 'react-modern-calendar-datepicker/lib/DatePicker.css';
-import DatePicker from 'react-modern-calendar-datepicker';
 import { Calendar } from "react-modern-calendar-datepicker";
 import {DateAndHour, getDates, fromDate, dateStart, fromMonth,dateStartMonth} from './';
 import {dateStartYear, fromYear} from "./DefaultDate";
@@ -53,6 +52,7 @@ export const LineChart = () => {
 
     const [lineData, setLineData] = useState(initialData);
     const [modal, setModal] = useState(false);
+    const [loading,setLoading] = useState(false);
 
     const [selectedDayRange, setSelectedDayRange] = useState({
         from: null,
@@ -64,6 +64,7 @@ export const LineChart = () => {
 
     useEffect(() => {
         //Get HorizontalBar Data from API
+        setLoading(true);
         const labels = getDates(fromMonth,"month");
         const reqData = {dateStart:dateStartMonth,dateEnd:DateAndHour,type:"month"};
         let copy = {...initialData,labels};
@@ -73,12 +74,14 @@ export const LineChart = () => {
                 let data = copy.datasets[0].data;
                 data = val.map((value, index) => data[index] = Number(val[index]));
                 setLineData({...copy});
+                setLoading(false)
             })
             .catch(error => console.log(error))
 
     }, []);
 
    const handleChangeData  = (type) => {
+       setLoading(true);
        let labels = '';
         let startDate = '';
        switch (type) {
@@ -106,6 +109,7 @@ export const LineChart = () => {
                let data = copy.datasets[0].data;
                data = val.map((value, index) => data[index] = Number(val[index]));
                setLineData({...copy});
+               setLoading(false)
            })
            .catch(error => console.log(error))
    };
@@ -115,6 +119,7 @@ export const LineChart = () => {
             <Col className="pr-0">
                 <Card className="dashboardCard">
                     <CardBody>
+                        {loading ? <div className="spinner-border text-danger sp" role="status"></div> : null}
                         <CardTitle className="cardTitle line">
                             Registrations Rate
                         </CardTitle>
@@ -134,8 +139,10 @@ export const LineChart = () => {
                         </Nav>
 
                         <Modal isOpen={modal} toggle={toggle}>
-                            <ModalHeader toggle={toggle}>Modal title</ModalHeader>
-                            <ModalBody>
+                            <ModalHeader toggle={toggle} className="text-center">
+                                Select date
+                            </ModalHeader>
+                            <ModalBody className="mx-auto">
                                 <Calendar
                                     value={selectedDayRange}
                                     onChange={setSelectedDayRange}
@@ -143,8 +150,8 @@ export const LineChart = () => {
                                 />
                             </ModalBody>
                             <ModalFooter>
-                                <Button color="primary" onClick={toggle}>Do Something</Button>{' '}
-                                <Button color="secondary" onClick={toggle}>Cancel</Button>
+                                <Button color="secondary" onClick={toggle}>Cancel</Button>{' '}
+                                <Button color="primary" onClick={toggle}>Apply</Button>
                             </ModalFooter>
                         </Modal>
                         <Line data={lineData}

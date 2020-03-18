@@ -1,7 +1,7 @@
-import React from 'react';
+import React, {Suspense} from 'react';
 import './App.css';
 import RegisterLayout from "./layouts/registration/RegisterLayout";
-import {BrowserRouter , Switch , Route,Redirect} from "react-router-dom";
+import {BrowserRouter , Switch ,Redirect} from "react-router-dom";
 import DashboardLayout from "./layouts/dashboard/DashboardLayout";
 import Home from "./pages/rigistration/Home";
 import Login from "./pages/rigistration/Login";
@@ -12,10 +12,10 @@ import LogoutFromOtherDevices from "./pages/rigistration/LogoutFromOtherDevices"
 import ResetPassword from "./pages/rigistration/ResetPassword";
 import VerifyAccount from "./pages/rigistration/VerifyAccount";
 import Profile from "./pages/rigistration/Profile";
-import MainDashboard from "./pages/dashboard/MainDashboard";
 import SignUp from "./pages/rigistration/signup/Signup";
 import {RouteWrapper,PrivateRoute} from "./Routes/RouteWrapper";
-import UsersData from "./pages/dashboard/UsersData";
+const UsersData = React.lazy(() => import("./pages/dashboard/UsersData"));
+const MainDashboard = React.lazy(()=> import("./pages/dashboard/MainDashboard"));
 
 function App() {
   return (
@@ -34,9 +34,10 @@ function App() {
 
               <RouteWrapper path="/signup"  component={SignUp} layout={RegisterLayout} />
 
-              <RouteWrapper path="/dashboard" exact layout={DashboardLayout} component={MainDashboard}/>
-              <RouteWrapper path="/dashboard/users-data" exact layout={DashboardLayout} component={UsersData}/>
-
+              <Suspense fallback={<div>Loading...</div>}>
+                  <RouteWrapper path="/dashboard" exact layout={DashboardLayout} component={MainDashboard}/>
+                  <RouteWrapper path="/dashboard/users-data" exact layout={DashboardLayout} component={UsersData}/>
+              </Suspense>
               {/*The redirect component only gets rendered if no other routes match first*/}
               <Redirect to='/'/>
           </Switch>

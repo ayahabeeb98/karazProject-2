@@ -13,8 +13,6 @@ import {activeUsers, newUser, visits} from '../../img/dashboard';
 import axios from 'axios';
 import {DateAndHour, DefaultDuration,DoughnutChart,HorizontalBarChart,LineChart} from './component';
 
-
-
 export default function MainDashboard() {
 
     //Card dropDown List State
@@ -58,11 +56,12 @@ export default function MainDashboard() {
     useEffect(() => {
         document.title = "Karaz Beauty | Dashboard";
         const reqData = {date: DateAndHour, type: "day"};
-
+        setLoading(true);
         axios.post('https://karaz6.herokuapp.com/api/dashboard/count', reqData)
             .then(response => {
                 const pre = Math.round(response.data.precentage * 100) / 100;
                 setCardData(prev => prev.map((c, i) => i === 1 ? ({...c, total: response.data.result, rate: pre}) : c));
+                setLoading(false);
             })
             .catch(error => {
                 console.log(error)
@@ -103,45 +102,13 @@ export default function MainDashboard() {
     return (
         <>
             <Row xs="1" md="3">
-                {/*{cardData.map((item, index) => {*/}
-                {/*    return (*/}
-                {/*        <Col className="pr-0" key={'card ' + index}>*/}
-                {/*            <Card body className="dashboardCard">*/}
-                {/*                <CardTitle className="cardTitle">*/}
-                {/*                    {item.title}*/}
-                {/*                </CardTitle>*/}
-                {/*                <span className="duration">*/}
-                {/*                     During this {item.duration}*/}
-                {/*                </span>*/}
-                {/*                <h3 className="cardNumber mt-1" id="cardNumber">*/}
-                {/*                    {!item.total ? counter : item.total}*/}
-                {/*                </h3>*/}
-                {/*                <p className="description">*/}
-                {/*                    <span className={item.rate <= 0 ? "rate down" : "rate up"}>*/}
-                {/*                        {item.rate <= 0 ?*/}
-                {/*                            <span>*/}
-                {/*                                <i className="fa fa-arrow-down"></i>*/}
-                {/*                                {Math.abs(item.rate)}%*/}
-                {/*                            </span>*/}
-                {/*                            : <span>*/}
-                {/*                                <i className="fa fa-arrow-up"></i>*/}
-                {/*                                {Math.abs(item.rate)}%*/}
-                {/*                            </span>}*/}
-                {/*                    </span>*/}
-                {/*                    {item.rate <= 0 ? " Down" : " Up"} From Last {item.duration}.*/}
-                {/*                </p>*/}
-                {/*            </Card>*/}
-                {/*        </Col>*/}
-                {/*    )*/}
-                {/*})}*/}
-
                 <Col className="pr-0">
                     <Card body className="dashboardCard">
                         <CardTitle className="cardTitle">
                             Visits
                         </CardTitle>
                         <span className="duration">
-                            During this {cardData[1].duration}
+                            During this month
                         </span>
                         <h3 className="cardNumber mt-1" id="cardNumber">
                             {/*Display the counter if the total still null*/}
@@ -156,13 +123,12 @@ export default function MainDashboard() {
                         <span className="cardIcon">
                             <img src={visits} alt="newUser"/>
                         </span>
-
-
                     </Card>
                 </Col>
 
                 <Col className="pr-0">
                     <Card body className="dashboardCard">
+                        {loading? <div className="spinner-border text-danger sp-card" role="status"></div> :null}
                         <CardTitle className="cardTitle">
                             New Users
                         </CardTitle>
@@ -206,16 +172,6 @@ export default function MainDashboard() {
                             <DropdownItem>Calender</DropdownItem>
                         </DropdownMenu>
                     </Dropdown>
-
-                    {loading ? <span className="loading-cover" style={{
-                        display: "flex",
-                        position: "absolute",
-                        top: "35%",
-                        left: "11%",
-                        backgroundColor: "#fff"
-                    }}>
-                    <i className="fa fa-spinner loadingIcon" style={{padding: "0.5rem"}}></i>
-                </span> : null}
                 </Col>
 
                 <Col className="pr-0">
@@ -224,11 +180,11 @@ export default function MainDashboard() {
                             Active Users
                         </CardTitle>
                         <span className="duration">
-                            During this {cardData[1].duration}
+                            During this {cardData[2].duration}
                         </span>
                         <h3 className="cardNumber mt-1">
                             {/*Display the counter if the total still null*/}
-                            {!cardData[1].total ? counter : cardData[1].total}
+                            {!cardData[2].total ? counter : cardData[2].total}
                         </h3>
                         <p className="description">
                             <span className="rate down">
@@ -241,8 +197,6 @@ export default function MainDashboard() {
                         <span className="cardIcon">
                             <img src={activeUsers} alt="newUser"/>
                         </span>
-
-
                     </Card>
                 </Col>
             </Row>

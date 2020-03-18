@@ -37,6 +37,6 @@ export function getDates(startDate,type, endDate = now) {
 }
 
 
-function convertToDate(date) {
+export function convertToDate(date) {
     return date.toISOString().slice(0,19).replace("T", " ");
 }
