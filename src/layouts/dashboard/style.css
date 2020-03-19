@@ -376,7 +376,12 @@ p.description i{
     transition: all 300ms ease-in-out;
 }
 
-.chart-btn:hover {
+.chart-btn:hover{
+    background-color: #D6D6D6;
+    color: #282c34;
+}
+
+.chart-btn.active {
     background-color: #DE3163;
     border: 1px solid #DE3163;
     color: #FFF;
@@ -405,6 +410,10 @@ nav.user-pagination {
     color: #000;
 }
 
+.user-pagination .pagination {
+    margin-bottom: 0;
+}
+
 /****** Responsive ******/
 
 @media (min-width: 567px ) {
@@ -413,7 +422,34 @@ nav.user-pagination {
     }
 }
 @media (max-width: 992px) {
+    .table.res-table th {
+        font-size: 0.875rem;
+        padding: 0.8rem 0.3rem 0.8rem 0.3rem;
+    }
 
+    .table.res-table td {
+        padding: .5rem;
+        font-size: 0.75rem;
+    }
+
+    .user-pagination .page-link {
+        font-size: 0.75rem;
+        padding: 0.3rem;
+    }
+
+    .dashboardCard.hor-bar {
+        margin-bottom: 0.875rem;
+    }
+
+    .cardTitle.line {
+        position: unset;
+        text-align: center;
+    }
+
+    .lineChart-menu {
+        width: 100%;
+        margin-bottom: 0.875rem;
+    }
 }
 
 
@@ -436,6 +472,8 @@ nav.user-pagination {
     aside a.asideLink .fa-desktop , aside a.asideLink img {
         display: none;
     }
+
+
 }
 
 
@@ -483,8 +521,34 @@ nav.user-pagination {
         padding-left: 15px;
     }
 
+    .table.res-table th {
+        font-size: 5px;
+        padding: 0.4rem;
+    }
+
+    .table.res-table td {
+        padding: .5rem;
+        font-size: 5px;
+    }
+
+    .user-pagination .page-link {
+        font-size: 5px;
+        padding: 0.3rem;
+    }
+
+    .chart-btn {
+        font-size: .75rem;
+        padding: .3rem .5rem;
+    }
+
+    .lineChart-menu .nav-item {
+        margin: 0.2rem;
+    }
 
 
+    .cardTitle.line {
+        margin: 0.75rem auto;
+    }
 }
 
 @media (max-width: 375px) {

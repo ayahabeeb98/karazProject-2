@@ -2,9 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="26d1cdd8-5987-4780-8ed1-d6b87afd2b70" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/pages/dashboard/component/CalenderPopUp.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/dashboard/component/LineChartNav.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/dashboard/component/DoughnutChart.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/dashboard/component/DoughnutChart.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layouts/dashboard/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/dashboard/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/dashboard/UsersData.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/dashboard/UsersData.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/dashboard/component/DefaultDate.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/dashboard/component/DefaultDate.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/dashboard/component/HorizontalBarChart.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/dashboard/component/HorizontalBarChart.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/dashboard/component/LineChart.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/dashboard/component/LineChart.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/dashboard/component/TableResult.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/dashboard/component/TableResult.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -20,8 +26,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pages/dashboard/UsersData.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1156">
-              <caret line="68" lean-forward="true" selection-start-line="68" selection-end-line="68" />
+            <state relative-caret-position="-118">
+              <caret line="49" column="55" lean-forward="true" selection-start-line="49" selection-start-column="55" selection-end-line="49" selection-end-column="64" />
               <folding>
                 <element signature="e#0#49#0" expanded="true" />
               </folding>
@@ -30,10 +36,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pages/dashboard/MainDashboard.js">
+        <entry file="file://$PROJECT_DIR$/src/pages/dashboard/component/LineChartNav.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2489">
-              <caret line="188" column="51" lean-forward="true" selection-start-line="188" selection-start-column="51" selection-end-line="188" selection-end-column="51" />
+            <state relative-caret-position="289">
+              <caret line="17" column="65" selection-start-line="17" selection-start-column="65" selection-end-line="17" selection-end-column="65" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pages/dashboard/component/DefaultDate.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="664">
+              <caret line="41" column="1" lean-forward="true" selection-start-line="41" selection-start-column="1" selection-end-line="41" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -41,36 +59,24 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pages/dashboard/component/LineChart.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="613">
-              <caret line="105" column="24" selection-start-line="105" selection-start-column="24" selection-end-line="105" selection-end-column="24" />
+            <state relative-caret-position="239">
+              <caret line="184" column="37" lean-forward="true" selection-start-line="184" selection-start-column="37" selection-end-line="184" selection-end-column="37" />
               <folding>
                 <element signature="e#0#49#0" expanded="true" />
+                <element signature="e#574#1304#0" />
+                <element signature="e#1323#1504#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/pages/dashboard/component/DoughnutChart.js">
+        <entry file="file://$PROJECT_DIR$/src/pages/dashboard/component/CalenderPopUp.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="307">
-              <caret line="71" column="19" selection-start-line="71" selection-start-column="19" selection-end-line="71" selection-end-column="19" />
+            <state relative-caret-position="136">
+              <caret line="8" column="33" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="33" />
               <folding>
-                <element signature="e#0#49#0" expanded="true" />
-                <element signature="e#236#666#0" />
-                <element signature="e#684#760#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pages/dashboard/component/HorizontalBarChart.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-866">
-              <caret line="6" column="20" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
-              <folding>
-                <element signature="e#0#49#0" expanded="true" />
+                <element signature="e#0#26#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -105,6 +111,7 @@
       <find>right-side</find>
       <find>.right-side .headerBtn</find>
       <find>msg</find>
+      <find>chart-btn</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -113,8 +120,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/pages/ResetPassword.js" />
-        <option value="$PROJECT_DIR$/src/component/dashboard/NavBar.js" />
         <option value="$PROJECT_DIR$/src/component/dashboard/Header.js" />
         <option value="$PROJECT_DIR$/src/layouts/MobileSideMenu.js" />
         <option value="$PROJECT_DIR$/src/component/dashboard/sideBar.js" />
@@ -145,7 +150,6 @@
         <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/src/pages/rigistration/ConfirmationCode.js" />
         <option value="$PROJECT_DIR$/src/components/dashboard/Cards.js" />
-        <option value="$PROJECT_DIR$/src/pages/dashboard/component/HorizontalBarChart.js" />
         <option value="$PROJECT_DIR$/src/layouts/registration/style.css" />
         <option value="$PROJECT_DIR$/src/components/dashboard/NavBar.js" />
         <option value="$PROJECT_DIR$/src/pages/rigistration/Profile.js" />
@@ -155,15 +159,18 @@
         <option value="$PROJECT_DIR$/src/components/dashboard/SideBar.js" />
         <option value="$PROJECT_DIR$/src/pages/rigistration/Login.js" />
         <option value="$PROJECT_DIR$/src/components/DetectDevice.js" />
-        <option value="$PROJECT_DIR$/src/pages/dashboard/component/DefaultDate.js" />
         <option value="$PROJECT_DIR$/src/App.js" />
-        <option value="$PROJECT_DIR$/src/pages/dashboard/component/PagePagination.js" />
-        <option value="$PROJECT_DIR$/src/pages/dashboard/component/TableResult.js" />
-        <option value="$PROJECT_DIR$/src/pages/dashboard/UsersData.js" />
-        <option value="$PROJECT_DIR$/src/layouts/dashboard/style.css" />
         <option value="$PROJECT_DIR$/src/pages/dashboard/MainDashboard.js" />
-        <option value="$PROJECT_DIR$/src/pages/dashboard/component/LineChart.js" />
         <option value="$PROJECT_DIR$/src/pages/dashboard/component/DoughnutChart.js" />
+        <option value="$PROJECT_DIR$/src/pages/dashboard/UsersData.js" />
+        <option value="$PROJECT_DIR$/src/pages/dashboard/component/TableResult.js" />
+        <option value="$PROJECT_DIR$/src/pages/dashboard/component/HorizontalBarChart.js" />
+        <option value="$PROJECT_DIR$/src/layouts/dashboard/style.css" />
+        <option value="$PROJECT_DIR$/src/pages/dashboard/component/DefaultDate.js" />
+        <option value="$PROJECT_DIR$/src/pages/dashboard/component/PagePagination.js" />
+        <option value="$PROJECT_DIR$/src/pages/dashboard/component/LineChartNav.js" />
+        <option value="$PROJECT_DIR$/src/pages/dashboard/component/LineChart.js" />
+        <option value="$PROJECT_DIR$/src/pages/dashboard/component/CalenderPopUp.js" />
       </list>
     </option>
   </component>
@@ -178,7 +185,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -201,6 +207,19 @@
               <item name="karaz-project" type="b2602c69:ProjectViewProjectNode" />
               <item name="karazProjectNew" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="layouts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="karaz-project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="karazProjectNew" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="layouts" type="462c0819:PsiDirectoryNode" />
+              <item name="dashboard" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="karaz-project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="karazProjectNew" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -218,17 +237,11 @@
               <item name="dashboard" type="462c0819:PsiDirectoryNode" />
               <item name="component" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="karaz-project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="karazProjectNew" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="rigistration" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -298,12 +311,13 @@
       <workItem from="1584433812940" duration="23312000" />
       <workItem from="1584520032942" duration="6762000" />
       <workItem from="1584538502606" duration="9084000" />
-      <workItem from="1584554706665" duration="10525000" />
+      <workItem from="1584554706665" duration="10701000" />
+      <workItem from="1584611690787" duration="9054000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="317073000" />
+    <option name="totallyTimeSpent" value="326303000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -364,8 +378,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/component/dashboard/SideBar.js" />
-    <entry file="file://$PROJECT_DIR$/src/component/dashboard/MobileSideMenu.js" />
     <entry file="file://$PROJECT_DIR$/src/component/Signup/StepOne.js" />
     <entry file="file://$PROJECT_DIR$/src/component/dashboard/Header.js" />
     <entry file="file://$PROJECT_DIR$/src/component/dashboard/NavBar.js" />
@@ -583,13 +595,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/layouts/registration/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="706" column="17" selection-start-line="706" selection-start-column="17" selection-end-line="706" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/dashboard/Cards.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -685,23 +690,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/dashboard/component/PagePagination.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="2" selection-start-line="22" selection-start-column="2" selection-end-line="22" selection-end-column="2" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/dashboard/component/DefaultDate.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/App.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -712,65 +700,111 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/layouts/dashboard/style.css">
+    <entry file="file://$PROJECT_DIR$/src/pages/dashboard/component/DoughnutChart.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/dashboard/component/TableResult.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
+        <state relative-caret-position="187">
+          <caret line="39" column="54" selection-start-line="39" selection-start-column="54" selection-end-line="39" selection-end-column="54" />
+          <folding>
+            <element signature="e#0#49#0" expanded="true" />
+            <element signature="e#236#666#0" />
+            <element signature="e#684#760#0" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/dashboard/MainDashboard.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2489">
-          <caret line="188" column="51" lean-forward="true" selection-start-line="188" selection-start-column="51" selection-end-line="188" selection-end-column="51" />
+        <state relative-caret-position="324">
+          <caret line="188" column="51" selection-start-line="188" selection-start-column="51" selection-end-line="188" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/layouts/registration/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1526">
+          <caret line="706" column="17" selection-start-line="706" selection-start-column="17" selection-end-line="706" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/dashboard/component/TableResult.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-34">
+          <caret line="4" column="58" selection-start-line="4" selection-start-column="58" selection-end-line="4" selection-end-column="58" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/dashboard/component/HorizontalBarChart.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-866">
-          <caret line="6" column="20" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
+        <state relative-caret-position="187">
+          <caret line="61" column="54" selection-start-line="61" selection-start-column="54" selection-end-line="61" selection-end-column="54" />
           <folding>
             <element signature="e#0#49#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/layouts/dashboard/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="383" column="17" selection-start-line="383" selection-start-column="17" selection-end-line="383" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/dashboard/component/PagePagination.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="38" lean-forward="true" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="38" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/dashboard/UsersData.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1156">
-          <caret line="68" lean-forward="true" selection-start-line="68" selection-end-line="68" />
+        <state relative-caret-position="-118">
+          <caret line="49" column="55" lean-forward="true" selection-start-line="49" selection-start-column="55" selection-end-line="49" selection-end-column="64" />
           <folding>
             <element signature="e#0#49#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/dashboard/component/DefaultDate.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="664">
+          <caret line="41" column="1" lean-forward="true" selection-start-line="41" selection-start-column="1" selection-end-line="41" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/dashboard/component/LineChartNav.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="65" selection-start-line="17" selection-start-column="65" selection-end-line="17" selection-end-column="65" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/dashboard/component/LineChart.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="613">
-          <caret line="105" column="24" selection-start-line="105" selection-start-column="24" selection-end-line="105" selection-end-column="24" />
+        <state relative-caret-position="239">
+          <caret line="184" column="37" lean-forward="true" selection-start-line="184" selection-start-column="37" selection-end-line="184" selection-end-column="37" />
           <folding>
             <element signature="e#0#49#0" expanded="true" />
+            <element signature="e#574#1304#0" />
+            <element signature="e#1323#1504#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/dashboard/component/DoughnutChart.js">
+    <entry file="file://$PROJECT_DIR$/src/pages/dashboard/component/CalenderPopUp.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
-          <caret line="71" column="19" selection-start-line="71" selection-start-column="19" selection-end-line="71" selection-end-column="19" />
+        <state relative-caret-position="136">
+          <caret line="8" column="33" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="33" />
           <folding>
-            <element signature="e#0#49#0" expanded="true" />
-            <element signature="e#236#666#0" />
-            <element signature="e#684#760#0" />
+            <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>

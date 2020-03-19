@@ -47,7 +47,7 @@ export default function UsersData() {
 
             <>
                 <h3 className="mainHeading mb-4 ">Users Data</h3>
-                <Table className="border mb-0 bg-white" light="true">
+                <Table className="border mb-0 bg-white res-table" light="true">
                     <thead>
                     <tr className="text-center">
                         <th className="border">#</th>

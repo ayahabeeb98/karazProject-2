@@ -59,7 +59,7 @@ export const HorizontalBarChart = () => {
     return (
         <>
             <Col className="pr-0">
-                <Card className="dashboardCard">
+                <Card className="dashboardCard hor-bar">
                     <CardBody>
                         <CardTitle className="cardTitle">
                             Top Locations

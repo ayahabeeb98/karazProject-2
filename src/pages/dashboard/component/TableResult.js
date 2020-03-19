@@ -2,7 +2,7 @@ import React from 'react';
 
 const TableResult = ({users , loading}) => {
     if (loading) {
-        return <h3 className="text-center">Loading ...</h3>
+        return <tr className="text-center"><th scope="row">Loading ...</th></tr>
     }
 
     const randomDevice = () => {

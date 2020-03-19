@@ -1,4 +1,4 @@
-const now = new Date();
+export const now = new Date();
 export const DateAndHour = convertToDate(now);
 export const DefaultDuration = now.toISOString().slice(0,10); //Date Only
 
