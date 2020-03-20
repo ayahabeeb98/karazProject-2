@@ -44,11 +44,11 @@ const Header = () => {
                                 </span>
                         </NavLink>
                     </NavItem>
-                    <NavItem className="mr-2">
+                    <NavItem>
                         <NavLink href="/">
                             <span className="iconWrapper">
                                 <i className="fa fa-bell IconBar"></i>
-                                <span className='IconBadge'>2</span>
+                                <span className='IconBadge'>5</span>
                             </span>
                         </NavLink>
                     </NavItem>

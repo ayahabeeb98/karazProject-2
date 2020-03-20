@@ -52,12 +52,25 @@
 #baseLayout .dropdown-menu {
     padding-left: 0.5rem;
     padding-right: 0.5rem;
+    width: 20rem;
 }
 #baseLayout .dropInfo {
     display: flex;
     padding-right: 0.3rem;
+    padding-left: 0.3rem;
 }
 
+#baseLayout .dropInfo.dropInfo-options{
+    justify-content: space-between;
+}
+
+#baseLayout .dropInfo.dropInfo-options .dropdownArrow{
+    align-self: center;
+}
+
+.dropdown-item:focus, .dropdown-item:hover {
+    background-color: #E9E9E9;
+}
 
 #baseLayout .dropInfo img {
     margin-left: 0.5rem;

@@ -47,7 +47,6 @@ export default class Login extends React.Component {
         user.device_name = DetectDevice().osName;
         user.browser_name = DetectDevice().browserName;
         this.setState({loading: true});
-console.log(user);
         axios.post('https://karaz6.herokuapp.com/api/user/login', user)
             .then(Response => {
                 if (Response.status === 200) { //store token if he logged in
