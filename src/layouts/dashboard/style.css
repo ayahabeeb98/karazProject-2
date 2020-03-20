@@ -6,7 +6,7 @@
     left: 40%;
 }
 
-#dashboard .spinner-border.sp{
+#dashboard .spinner-border.sp {
     width: 3rem;
     height: 3rem;
     left: 50%;
@@ -26,7 +26,7 @@
     box-shadow: 0 0 0 0.2rem rgba(255, 180, 246, 0.49);
 }
 
-.custom-container div.sideBarWrapper ,.custom-container div.pageContainer {
+.custom-container div.sideBarWrapper, .custom-container div.pageContainer {
     padding-left: 0;
 }
 
@@ -41,9 +41,10 @@
     border-radius: 50%;
     z-index: 4;
     background-color: #282c34;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.5);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
     /*display: none;*/
 }
+
 /******* NavBar Style *******/
 
 /*Notification and messages icon*/
@@ -67,13 +68,14 @@
     transition: color 400ms ease-in-out;
 }
 
-.searchIconWrapper:hover , .searchIconWrapper:focus {
+.searchIconWrapper:hover, .searchIconWrapper:focus {
     color: #142D3B;
 }
 
 .mobile-search {
     display: none;
 }
+
 /*Search Input*/
 #search {
     border-radius: 2rem;
@@ -133,7 +135,7 @@ div.breadcrumb {
     padding: .75rem 0;
 }
 
-a.headerLink{
+a.headerLink {
     color: #FFF;
 }
 
@@ -154,7 +156,7 @@ span.breadcrumb-item.active {
 }
 
 .right-side .headerBtn {
-    background-color: rgba(255,255,255,0.16);
+    background-color: rgba(255, 255, 255, 0.16);
     width: 6rem;
     border: none;
     margin: 0 0.3rem;
@@ -166,8 +168,8 @@ span.breadcrumb-item.active {
 
 
 /**** Aside component Style ****/
-aside.mainAside , .dashboardCard {
-    box-shadow: 0 3px 6px rgba(0,0,0,0.16);
+aside.mainAside, .dashboardCard {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
 }
 
 
@@ -198,7 +200,7 @@ aside a.asideLink {
 
 
 aside a.asideLink.active {
-    background-color: rgba(222,49,99,0.15);
+    background-color: rgba(222, 49, 99, 0.15);
 }
 
 aside span.asideBadge {
@@ -241,7 +243,7 @@ aside span.asideBadge {
 
 .cardMenu {
     cursor: pointer;
-    position: absolute!important;
+    position: absolute !important;
     top: 1.5rem;
     right: 1.3rem;
 }
@@ -255,7 +257,7 @@ p.description {
     font-size: .9rem;
 }
 
-p.description i{
+p.description i {
     /*font-size: 0.8em;*/
 }
 
@@ -276,7 +278,7 @@ p.description i{
     font-size: 0.75rem;
 }
 
-.dashboardCard p.cardLinks span:hover ,p.cardLinks span.active {
+.dashboardCard p.cardLinks span:hover, p.cardLinks span.active {
     color: #00820F;
 }
 
@@ -292,7 +294,8 @@ p.description i{
     transition: width 0.3s ease 0s, left 0.3s ease 0s;
     width: 0;
 }
-.dashboardCard p.cardLinks span:hover:after,  p.cardLinks span.active:after  {
+
+.dashboardCard p.cardLinks span:hover:after, p.cardLinks span.active:after {
     width: 30%;
     margin: 0 auto;
     left: 0.75rem;
@@ -367,8 +370,9 @@ p.description i{
 }
 
 .lineChart-menu .nav-item {
-    margin: 0 .5rem ;
+    margin: 0 .5rem;
 }
+
 .chart-btn {
     color: #A7A7A7;
     border: 1px solid #A7A7A7;
@@ -376,7 +380,7 @@ p.description i{
     transition: all 300ms ease-in-out;
 }
 
-.chart-btn:hover{
+.chart-btn:hover {
     background-color: #D6D6D6;
     color: #282c34;
 }
@@ -401,6 +405,7 @@ nav.user-pagination {
     color: #4B4B4B;
     font-size: 1rem;
 }
+
 .page-link {
     color: #878787;
 }
@@ -414,6 +419,17 @@ nav.user-pagination {
     margin-bottom: 0;
 }
 
+/*Calender*/
+.fromTo {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    color: #DE3163;
+    text-transform: capitalize;
+}
+
+
+
 /****** Responsive ******/
 
 @media (min-width: 567px ) {
@@ -421,6 +437,7 @@ nav.user-pagination {
         display: none;
     }
 }
+
 @media (max-width: 992px) {
     .table.res-table th {
         font-size: 0.875rem;
@@ -458,7 +475,7 @@ nav.user-pagination {
         margin-bottom: 0.875rem;
     }
 
-    aside a.asideLink{
+    aside a.asideLink {
         padding-right: .3rem;
         font-size: 0.875rem;
     }
@@ -469,7 +486,7 @@ nav.user-pagination {
         font-size: .6rem;
     }
 
-    aside a.asideLink .fa-desktop , aside a.asideLink img {
+    aside a.asideLink .fa-desktop, aside a.asideLink img {
         display: none;
     }
 
@@ -478,6 +495,9 @@ nav.user-pagination {
 
 
 @media (max-width: 576px) {
+    .modal-body.calenderModal {
+        padding: 0.5rem;
+    }
     .search-form {
         display: none;
     }
@@ -485,6 +505,7 @@ nav.user-pagination {
     .mobile-search {
         display: block;
     }
+
     .sideMenu {
         display: block;
     }
@@ -494,7 +515,7 @@ nav.user-pagination {
     }
 
     .navbar-light .navbar-brand {
-        display: none!important;
+        display: none !important;
     }
 
     .navbar-nav .nav-item {
@@ -515,7 +536,7 @@ nav.user-pagination {
         max-width: unset;
     }
 
-    .custom-container div.pageContainer{
+    .custom-container div.pageContainer {
         flex: 0 95%;
         max-width: 95%;
         padding-left: 15px;
@@ -552,7 +573,7 @@ nav.user-pagination {
 }
 
 @media (max-width: 375px) {
-    .right-side .headerBtn{
+    .right-side .headerBtn {
         padding: 0.5rem;
     }
 }

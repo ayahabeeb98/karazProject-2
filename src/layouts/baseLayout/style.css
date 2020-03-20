@@ -1,0 +1,92 @@
+#baseLayout {
+    font-family: 'Cairo', Arial, sans-serif;
+}
+
+#baseLayout .mainHeader {
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16);
+}
+
+#baseLayout .avatarWrapper img.pic{
+    width: 30%;
+    margin-left: 0.4rem;
+}
+
+#baseLayout .iconWrapper img.bars {
+    padding: 0.22rem;
+}
+
+#baseLayout .nav-link:focus  span.iconWrapper {
+    background-color: #D4D4D4;
+}
+
+
+
+#baseLayout .iconWrapper {
+    width: unset;
+    height: unset;
+    padding: 0.75rem;
+    background-color: #F6F6F6;
+    border-radius: 50%;
+}
+
+#baseLayout .IconBar {
+    font-size: 1.2em;
+    align-self: center;
+    color: #5F666F;
+    margin-top: 0;
+}
+
+#baseLayout .IconBadge {
+    background-color: #CC5775;
+    bottom: 1.87rem;
+    left: -4px;
+}
+
+
+#baseLayout .userName {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #040404;
+}
+
+#baseLayout .dropdown-menu {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+#baseLayout .dropInfo {
+    display: flex;
+    padding-right: 0.3rem;
+}
+
+
+#baseLayout .dropInfo img {
+    margin-left: 0.5rem;
+}
+
+#baseLayout .nameAndStatus {
+    display: flex;
+    flex-direction: column;
+}
+
+#baseLayout .activeStatus {
+    font-size: .875rem;
+    display: block;
+    color: #43D45B;
+}
+
+
+
+
+
+
+
+
+
+
+#baseLayout #mainFooter .bottom-nav {
+    width: 50%;
+}
+
+#baseLayout #mainFooter .bottom-nav a {
+    color: #282c34;
+}

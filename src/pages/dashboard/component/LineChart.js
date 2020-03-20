@@ -131,7 +131,6 @@ export const LineChart = () => {
            .catch(error => console.log(error))
    };
 
-
     const handleCalenderChange = () => {
         setModal(!modal);
         setActive('calender');
@@ -152,12 +151,12 @@ export const LineChart = () => {
             type = 'year'
         }
         let labels = getDates(dateFrom,type);
-
         const reqDate = {dateStart,dateEnd,type};
         let copy = {...initialData,labels};
         axios.post('https://karaz6.herokuapp.com/api/dashboard/chart',reqDate)
             .then(response=> {
                 let val = response.data.results;
+                val.shift();
                 let data = copy.datasets[0].data;
                 data = val.map((value, index) => data[index] = Number(val[index]));
                 setLineData({...copy});
@@ -179,9 +178,16 @@ export const LineChart = () => {
                         <LineChartNav handleChange={handleChangeData} toggle={toggle} active={active }/>
 
                         <CalenderPopUp toggle={toggle} modal={modal} handleChange={handleCalenderChange}>
+                            <div className="fromTo">
+                                <p>from: {selectedDayRange.from.year+'/'+selectedDayRange.from.month+'/'+selectedDayRange.from.day}</p>
+                                <p>to: {selectedDayRange.to ? selectedDayRange.to.year +'/'+selectedDayRange.to.month+'/'+selectedDayRange.to.day:
+                                    <span style={{color:"rgba(0,0,0,0.3)"}}>0000/00/00</span>}</p>
+                            </div>
                             <Calendar
                                 value={selectedDayRange}
                                 onChange={setSelectedDayRange}
+                                colorPrimary="#1976D2"
+                                colorPrimaryLight="rgba(25,118,210,0.3)"
                                 shouldHighlightWeekends
                             />
                         </CalenderPopUp>

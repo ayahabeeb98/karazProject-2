@@ -5,6 +5,7 @@ import Cookies from "universal-cookie";
 import axios from 'axios';
 import {SocialMediaLogin} from "./SocialMediaLogin";
 import {detectDevice} from "../dashboard/component/DefaultDate";
+import {DetectDevice} from "../../components/DetectDevice";
 
 export default class Login extends React.Component {
 
@@ -43,8 +44,10 @@ export default class Login extends React.Component {
             user.phone = field;
         }
 
+        user.device_name = DetectDevice().osName;
+        user.browser_name = DetectDevice().browserName;
         this.setState({loading: true});
-
+console.log(user);
         axios.post('https://karaz6.herokuapp.com/api/user/login', user)
             .then(Response => {
                 if (Response.status === 200) { //store token if he logged in

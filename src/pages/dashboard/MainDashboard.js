@@ -112,7 +112,7 @@ export default function MainDashboard() {
                         </span>
                         <h3 className="cardNumber mt-1" id="cardNumber">
                             {/*Display the counter if the total still null*/}
-                            {!cardData[1].total ? counter : cardData[1].total}
+                            145k
                         </h3>
                         <p className="description">
                             <span className="rate up">

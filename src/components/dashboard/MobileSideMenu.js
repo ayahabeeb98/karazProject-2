@@ -1,6 +1,7 @@
 import React from 'react';
 import {Nav, NavbarBrand, NavItem, NavLink, UncontrolledCollapse} from 'reactstrap';
 import {logo,tables} from '../../img/dashboard';
+import {Link} from "react-router-dom";
 
 
 class MobileSideMenu extends React.Component {
@@ -44,7 +45,7 @@ class MobileSideMenu extends React.Component {
 
                     <UncontrolledCollapse toggler="#toggler">
                         <NavItem>
-                            <NavLink>Users data</NavLink>
+                            <NavLink tag={Link} to='/dashboard/users-data' className="asideLink pl-5">Users data</NavLink>
                         </NavItem>
                     </UncontrolledCollapse>
                 </Nav>

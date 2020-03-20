@@ -9,5 +9,17 @@ import facebbok from  './f.png';
 import signup from './signup.png';
 import avatar from './avatar.png';
 import verify from './verfiy.png';
+import profilePic from './profilePic.png';
+import menu from './Menu.png';
+import setting from './setting.png';
+import help from './help.png';
+import payment from './pay.png';
+import booking from './booking.png';
+import saved from './saved.png';
+import see from './see.png';
+import darkMode from './darkMode.png';
+import logout from './logout.png';
 
-export {img1,img2,img3,logo,apple,google,gmail,facebbok,signup,avatar,verify};
+export {img1,img2,img3,logo,apple,google,gmail,facebbok,signup,avatar,verify,profilePic,menu,
+        setting,help,payment,booking,saved,see,darkMode,logout
+};

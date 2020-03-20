@@ -14,6 +14,8 @@ import VerifyAccount from "./pages/rigistration/VerifyAccount";
 import Profile from "./pages/rigistration/Profile";
 import SignUp from "./pages/rigistration/signup/Signup";
 import {RouteWrapper,PrivateRoute} from "./Routes/RouteWrapper";
+import HomePage from "./pages/HomePage";
+import BaseLayout from "./layouts/baseLayout/BaseLayout";
 const UsersData = React.lazy(() => import("./pages/dashboard/UsersData"));
 const MainDashboard = React.lazy(()=> import("./pages/dashboard/MainDashboard"));
 
@@ -30,7 +32,7 @@ function App() {
               <RouteWrapper path="/reset-password" component={ResetPassword}  layout={RegisterLayout} />
               <PrivateRoute path="/verify-account" component={VerifyAccount}  layout={RegisterLayout} />
               <PrivateRoute path="/profile" component={Profile}  layout={RegisterLayout} />
-
+              <PrivateRoute path="/home" component={HomePage} layout={BaseLayout}/>
 
               <RouteWrapper path="/signup"  component={SignUp} layout={RegisterLayout} />
 

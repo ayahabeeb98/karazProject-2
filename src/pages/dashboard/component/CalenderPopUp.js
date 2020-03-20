@@ -8,11 +8,11 @@ const CalenderPopUp = ({modal,toggle,handleChange,children}) => {
             <ModalHeader toggle={toggle} className="text-center">
                 Select a range of date
             </ModalHeader>
-            <ModalBody className="mx-auto">
+            <ModalBody className="mx-auto calenderModal">
                 {children}
             </ModalBody>
             <ModalFooter>
-                <Button color="secondary" onClick={toggle}>Cancel</Button>{' '}
+                <Button color="primary" onClick={toggle} outline>Cancel</Button>{' '}
                 <Button color="primary" onClick={handleChange}>Apply</Button>
             </ModalFooter>
         </Modal>

@@ -17,10 +17,6 @@ class VerifyAccount extends React.Component {
 
     UNSAFE_componentWillMount() {
         const {cookie} = this.state;
-        const token = cookie.get("token");
-        if (!token) {
-            this.props.history.push('/login')
-        }
         const query = queryString.parse(this.props.location.search);
         if (query.token) {
             cookie.set("token", query.token, {path: '/'});
