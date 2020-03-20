@@ -47,7 +47,11 @@ class Profile extends React.Component {
 
     render() {
         const {verified,userName, removed} = this.state;
-        if(!verified) {return null}
+        if(!verified) {return (
+            <span className="loadingWrapper">
+                <i className="fa fa-spinner loadingIcon"></i>
+            </span>
+        )}
         return (
             <>
 

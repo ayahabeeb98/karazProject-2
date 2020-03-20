@@ -11,22 +11,23 @@ class VerifyAccount extends React.Component {
             msg: '',
             verified: null,
             removed: false,
+            google:false,
             cookie: new Cookies()
-        }
-    }
-
-    UNSAFE_componentWillMount() {
-        const {cookie} = this.state;
-        const query = queryString.parse(this.props.location.search);
-        if (query.token) {
-            cookie.set("token", query.token, {path: '/'});
         }
     }
 
 
     componentDidMount() {
         const {cookie} = this.state;
+        const query = queryString.parse(this.props.location.search);
+        if (query.token) {
+            cookie.set("token", query.token, {path: '/'});
+            this.setState({google:true});
+        }
         const token = cookie.get('token');
+        if(!token){
+            this.props.history.push('/login');
+        }
         const config = {
             headers: {Authorization: `Bearer ${token}`}
         };
@@ -80,7 +81,7 @@ class VerifyAccount extends React.Component {
     };
 
     render() {
-        const {verified, removed} = this.state;
+        const {verified, removed,google} = this.state;
 
         return (
             <>
@@ -120,7 +121,7 @@ class VerifyAccount extends React.Component {
                     </>
                     :
                     <span className="loadingWrapper">
-                        <i className="fa fa-spinner loadingIcon"></i>
+                        {google ? <Redirect to='/profile' /> :  <i className="fa fa-spinner loadingIcon"></i>}
                     </span>
                 }
             </>

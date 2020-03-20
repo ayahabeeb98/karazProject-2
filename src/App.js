@@ -30,7 +30,7 @@ function App() {
               <RouteWrapper path="/recover/code" component={ConfirmationCode}  layout={RegisterLayout} />
               <RouteWrapper path="/recover/logout" component={LogoutFromOtherDevices}  layout={RegisterLayout}/>
               <RouteWrapper path="/reset-password" component={ResetPassword}  layout={RegisterLayout} />
-              <PrivateRoute path="/verify-account" component={VerifyAccount}  layout={RegisterLayout} />
+              <RouteWrapper path="/verify-account" component={VerifyAccount}  layout={RegisterLayout} />
               <PrivateRoute path="/profile" component={Profile}  layout={RegisterLayout} />
               <PrivateRoute path="/home" component={HomePage} layout={BaseLayout}/>
 
