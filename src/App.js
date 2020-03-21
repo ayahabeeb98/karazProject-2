@@ -16,6 +16,7 @@ import SignUp from "./pages/rigistration/signup/Signup";
 import {RouteWrapper,PrivateRoute} from "./Routes/RouteWrapper";
 import HomePage from "./pages/HomePage";
 import BaseLayout from "./layouts/baseLayout/BaseLayout";
+import Setting from "./pages/setting/Setting";
 const UsersData = React.lazy(() => import("./pages/dashboard/UsersData"));
 const MainDashboard = React.lazy(()=> import("./pages/dashboard/MainDashboard"));
 
@@ -32,14 +33,21 @@ function App() {
               <RouteWrapper path="/reset-password" component={ResetPassword}  layout={RegisterLayout} />
               <RouteWrapper path="/verify-account" component={VerifyAccount}  layout={RegisterLayout} />
               <PrivateRoute path="/profile" component={Profile}  layout={RegisterLayout} />
-              <PrivateRoute path="/home" component={HomePage} layout={BaseLayout}/>
+
 
               <RouteWrapper path="/signup"  component={SignUp} layout={RegisterLayout} />
+
+
+              <PrivateRoute path="/home" component={HomePage} layout={BaseLayout}/>
+              <PrivateRoute path="/setting" component={Setting} layout={BaseLayout}/>
+
 
               <Suspense fallback={<div>Loading...</div>}>
                   <RouteWrapper path="/dashboard" exact layout={DashboardLayout} component={MainDashboard}/>
                   <RouteWrapper path="/dashboard/users-data" exact layout={DashboardLayout} component={UsersData}/>
               </Suspense>
+
+
               {/*The redirect component only gets rendered if no other routes match first*/}
               <Redirect to='/'/>
           </Switch>

@@ -9,17 +9,17 @@ import {
 } from "reactstrap";
 import {logo} from "../../img/dashboard";
 import Form from "reactstrap/es/Form";
-import {profilePic} from "../../img";
+import {brand, profilePic} from "../../img";
 import DropDownNav from "./DropDownNav";
 
 
 const Header = () => {
     return (
         <header className="mainHeader" dir="rtl">
-            <Navbar light expand className="custom-container" style={{backgroundColor: "#FFF"}}>
+            <Navbar light expand className="custom-container py-0" style={{backgroundColor: "#FFF"}}>
                 {/** NavBar Brand **/}
                 <NavbarBrand href="/" className="mr-auto d-flex w-100">
-                    <img src={logo} alt="logo"/>
+                    <img src={brand} alt="logo"/>
                 </NavbarBrand>
 
                 {/** Search **/}

@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {DropdownItem, DropdownMenu, DropdownToggle, UncontrolledDropdown} from "reactstrap";
 import {menu, profilePic,setting,help,payment,booking,saved,see,darkMode,logout} from "../../img";
 import Cookies from "universal-cookie/lib";
-import {Redirect} from 'react-router-dom';
+import {Redirect,Link} from 'react-router-dom';
 
 const DropDownNav = () => {
     const [cookie] = useState(new Cookies());
@@ -32,7 +32,7 @@ const DropDownNav = () => {
                     </div>
                 </DropdownItem>
                 <DropdownItem divider/>
-                <DropdownItem className="dropInfo dropInfo-options">
+                <DropdownItem className="dropInfo dropInfo-options" tag={Link} to="/setting">
                     <div className="dropOption">
                         <img src={setting} alt="seeting"/>
                         الإعدادات

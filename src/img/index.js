@@ -19,7 +19,15 @@ import saved from './saved.png';
 import see from './see.png';
 import darkMode from './darkMode.png';
 import logout from './logout.png';
+import userInfo from './info.png';
+import security from './security.png';
+import notification from './notif.png';
+import lang from './language.png';
+import rateApp from './rateApp.png';
+import shareApp from './shareApp.png';
+import brand from './brand.png';
 
 export {img1,img2,img3,logo,apple,google,gmail,facebbok,signup,avatar,verify,profilePic,menu,
-        setting,help,payment,booking,saved,see,darkMode,logout
+        setting,help,payment,booking,saved,see,darkMode,logout,userInfo,security,notification,lang,rateApp,
+        shareApp,brand
 };

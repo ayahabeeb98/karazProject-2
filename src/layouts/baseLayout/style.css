@@ -2,6 +2,11 @@
     font-family: 'Cairo', Arial, sans-serif;
 }
 
+#baseLayout .pageContent {
+    width: 95%;
+    margin: 0 auto;
+}
+
 #baseLayout .mainHeader {
     box-shadow: 0 3px 6px rgba(0,0,0,0.16);
 }
@@ -87,6 +92,50 @@
     color: #43D45B;
 }
 
+#baseLayout .settingAside{
+    border-left: 1px solid #EBEDF0;
+    padding-left: 0.5rem;
+    height: 100%;
+}
+
+#baseLayout .settingAside .nav-link {
+    padding-right: 0.4rem;
+    border-radius: 8px;
+    color: #000000;
+}
+
+#baseLayout .settingAside .nav-link.active{
+    background-color: rgba(204,87,117,0.2);
+}
+
+
+#baseLayout .settingAside .nav-link:hover {
+    background-color: rgba(204,87,117,0.5);
+}
+
+
+#baseLayout .settingAside .nav-link img {
+    margin-left: 1rem;
+}
+
+#baseLayout .settingAside .nav-link span {
+    vertical-align: middle;
+}
+
+#baseLayout .settingHeader {
+    font-weight: bold;
+    font-size: 1.312rem;
+    text-align: right;
+    margin-top: 0.75rem;
+    color: #000000;
+}
+
+#baseLayout .editHeader {
+    margin-top: 3rem;
+    font-size: 1.25rem;
+    text-align: right;
+    font-weight: 600;
+}
 
 
 

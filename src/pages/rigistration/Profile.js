@@ -1,17 +1,16 @@
 import React from 'react';
 import {verify} from "../../img";
-import {Redirect} from "react-router-dom";
+import {Link} from "react-router-dom";
 import axios from "axios";
 import Cookies from "universal-cookie/lib";
 
 
 class Profile extends React.Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             verified:false,
             userName: null,
-            removed: false,
             cookie: new Cookies()
         }
     }
@@ -39,14 +38,9 @@ class Profile extends React.Component {
         })
     }
 
-    logout = () => {
-        const {cookie} = this.state;
-        cookie.remove("token", {path: '/'});
-        this.setState({removed: true})
-    };
 
     render() {
-        const {verified,userName, removed} = this.state;
+        const {verified,userName} = this.state;
         if(!verified) {return (
             <span className="loadingWrapper">
                 <i className="fa fa-spinner loadingIcon"></i>
@@ -62,11 +56,7 @@ class Profile extends React.Component {
 
                 <img src={verify} alt="girl"/>
                 <div className="choices">
-                    {!removed ?
-                        <button className="btn btn-custom btn-login" onClick={this.logout}>تسجيل الخروج</button>
-                        :
-                        <Redirect to="/"/>
-                    }
+                    <Link className="btn btn-custom btn-login" to="/home">الدخول للموقع</Link>
                 </div>
 
 
