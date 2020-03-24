@@ -1,0 +1,240 @@
+
+#baseLayout .settingAside{
+    border-left: 1px solid #EBEDF0;
+    padding-left: 0.5rem;
+    height: 100%;
+}
+
+#baseLayout .settingAside .nav-link {
+    padding-right: 0.4rem;
+    border-radius: 8px;
+    color: #000000;
+}
+
+#baseLayout .settingAside .nav-link.active{
+    background-color: rgba(204,87,117,0.2);
+}
+
+
+#baseLayout .settingAside .nav-link:hover {
+    background-color: rgba(204,87,117,0.5);
+}
+
+
+#baseLayout .settingAside .nav-link img {
+    margin-left: 1rem;
+}
+
+#baseLayout .settingAside .nav-link span {
+    vertical-align: middle;
+}
+
+#baseLayout .settingHeader {
+    font-weight: bold;
+    font-size: 1.312rem;
+    text-align: right;
+    margin-top: 0.75rem;
+    color: #000000;
+}
+
+#baseLayout .editHeader {
+    margin-top: 3rem;
+    font-size: 1.25rem;
+    text-align: right;
+    font-weight: 600;
+}
+
+
+#baseLayout #avatar {
+    display:none;
+}
+
+#baseLayout .ChangeImageWrapper {
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+#baseLayout .ChangeImageWrapper img {
+    margin-left: 1rem;
+}
+
+#baseLayout .ChangeImageWrapper p {
+    text-align: right;
+    margin-bottom: 0;
+    color: #040404;
+    font-size: 1.125rem;
+}
+
+#baseLayout .settingLabel {
+    cursor: pointer;
+    color: #1492E6;
+    font-size: 0.65rem;
+    display: block;
+}
+
+
+
+
+#baseLayout #mainFooter .bottom-nav {
+    width: 50%;
+}
+
+#baseLayout #mainFooter .bottom-nav a {
+    color: #282c34;
+}
+
+
+.settingForm {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row-reverse;
+    text-align: right;
+}
+
+.settingForm label {
+    font-weight: 600;
+    width: 15%;
+    margin-bottom: 0;
+    align-self: center;
+}
+
+.settingForm input {
+    border-radius: 7px;
+    border: 1px solid #E4E4E4;
+    width: 30%;
+    padding: 0.3rem 0.5rem;
+    text-align: right;
+}
+
+
+.settingForm input:focus {
+    border: 1px solid #DE3163}
+
+.settingForm.btn-form {
+    width: 30%;
+    margin-left: 55%;
+}
+
+.settingForm button {
+    width: 100%;
+    color: #FFFFFF;
+    background-color: #B8405E;
+    transition: all 400ms ease-in-out;
+    border-radius: 5px;
+    padding: 0.5rem;
+    border: 1px solid #B8405E;
+}
+
+.settingForm button:hover {
+    background-color: #FFFFFF;
+    color: #B8405E;
+}
+
+#securityCard {
+    text-align: right;
+    margin-bottom: 1rem;
+}
+
+#securityCard .cardSection{
+    position: relative;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+#securityCard .cardSection span {
+    align-self: center;
+}
+
+#securityCard .cardBody {
+    margin-right: 1rem;
+}
+
+#securityCard .cardBody h4 {
+    font-size: 1.125rem;
+}
+
+#securityCard .cardBody p {
+    font-size: 0.687rem;
+    color: #9F9F9F;
+    margin-bottom: 0;
+}
+
+#securityCard hr {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+#securityCard .cardSection .cardBtn {
+    position: absolute;
+    padding: 0.3rem 0.5rem;
+    font-size: 0.6875rem;
+    left: 3%;
+    top: 30%;
+}
+
+
+#securityCard .collapseWrapper {
+    padding: 1rem 2rem;
+    margin-bottom: 1rem;
+}
+
+#securityCard .collapseWrapper.loginLog {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+}
+
+#securityCard .collapseWrapper .loginLogDetails {
+    display: flex;
+    flex-direction: column;
+    margin-right: 1rem;
+}
+
+.collapseWrapper .loginLogDetails .loginLocation{
+    color: #000;
+    font-size: 0.9375rem;
+}
+
+.collapseWrapper .loginLogDetails small {
+    color: #9F9F9F;
+    font-size: 0.6rem;
+}
+
+
+.collapseWrapper .logoutAllSession {
+    background-color: #F6F6F6;
+}
+
+.logoutAllSession button {
+    color: #C95371;
+    font-size: 0.9375rem;
+    padding: 1rem;
+    border-radius: 0;
+    border: 1px solid #B7B7B7;
+}
+
+#securityCard .settingDropDown {
+    cursor: pointer;
+}
+
+#securityCard .settingDropDown a {
+    padding: 0.3rem 0.5rem;
+}
+
+#securityCard .conditions {
+    width: 65%;
+    margin: 1rem auto;
+}
+
+
+#securityCard .line{
+    width: 50%;
+    height: 1px;
+    border: 1px solid #707070;
+    margin-left: auto;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem
+}

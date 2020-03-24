@@ -23,7 +23,7 @@ const DropDownNav = () => {
                     <img src={menu} alt="avatar" className="bars"/>
                 </span>
             </DropdownToggle>
-            <DropdownMenu className="text-right">
+            <DropdownMenu className="text-right navDropDown">
                 <DropdownItem className="dropInfo">
                     <img src={profilePic} alt="avatar" className="pic"/>
                     <div className="nameAndStatus">

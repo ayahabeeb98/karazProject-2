@@ -26,8 +26,14 @@ import lang from './language.png';
 import rateApp from './rateApp.png';
 import shareApp from './shareApp.png';
 import brand from './brand.png';
+import passwordIcon from './password.png';
+import locationIcon from './location.png';
+import privateIcon from './private.png';
+import activityLog from './activeLog.png';
+import web from './web.png';
+import mobile from './mobile.png';
 
 export {img1,img2,img3,logo,apple,google,gmail,facebbok,signup,avatar,verify,profilePic,menu,
         setting,help,payment,booking,saved,see,darkMode,logout,userInfo,security,notification,lang,rateApp,
-        shareApp,brand
+        shareApp,brand,passwordIcon,locationIcon,privateIcon,activityLog,mobile,web
 };
