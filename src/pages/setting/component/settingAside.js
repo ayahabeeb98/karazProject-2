@@ -1,19 +1,14 @@
-import React,{useState} from 'react';
+import React from 'react';
 import { Nav, NavItem, NavLink} from "reactstrap";
 import {userInfo,security,notification,lang,rateApp,shareApp} from '../../../img';
-import {Link} from "react-router-dom";
 
-const SettingAside = () => {
-
-    const [activeItem , setActiveItem] = useState('info');
-
+const settingAside = () =>{
     return (
         <aside className="settingAside">
          <p className="settingHeader">الإعدادات</p>
             <Nav vertical className="text-right">
                 <NavItem>
-                    <NavLink  tag={Link} to="/setting"   onClick={()=>setActiveItem("info")}
-                              className={activeItem === 'info' ? "settingLink active" : "settingLink"}>
+                    <NavLink href="#" className="settingLink active">
                         <span>المعلومات الشخصية</span>
                         <img src={userInfo} alt="user"/>
                     </NavLink>
@@ -22,8 +17,7 @@ const SettingAside = () => {
                 <hr className="my-2"/>
 
                 <NavItem>
-                    <NavLink tag={Link} to="/setting/securityAndPrivacy" onClick={()=>setActiveItem("security")}
-                             className={activeItem === 'security' ? "settingLink active" : "settingLink"}>
+                    <NavLink href="#" className="settingLink">
                         <span>الأمان والخصوصية</span>
                         <img src={security} alt="secure"/>
                     </NavLink>
@@ -64,5 +58,5 @@ const SettingAside = () => {
     )
 };
 
-export default SettingAside;
+export default settingAside;
 

@@ -5,9 +5,6 @@
 #baseLayout .pageContent {
     width: 95%;
     margin: 0 auto;
-    padding-bottom: 4rem;
-    position: relative;
-    min-height: 90vh;
 }
 
 #baseLayout .mainHeader {
@@ -57,12 +54,11 @@
     color: #040404;
 }
 
-#baseLayout .dropdown-menu.navDropDown {
+#baseLayout .dropdown-menu {
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     width: 20rem;
 }
-
 #baseLayout .dropInfo {
     display: flex;
     padding-right: 0.3rem;
@@ -96,3 +92,63 @@
     color: #43D45B;
 }
 
+#baseLayout .settingAside{
+    border-left: 1px solid #EBEDF0;
+    padding-left: 0.5rem;
+    height: 100%;
+}
+
+#baseLayout .settingAside .nav-link {
+    padding-right: 0.4rem;
+    border-radius: 8px;
+    color: #000000;
+}
+
+#baseLayout .settingAside .nav-link.active{
+    background-color: rgba(204,87,117,0.2);
+}
+
+
+#baseLayout .settingAside .nav-link:hover {
+    background-color: rgba(204,87,117,0.5);
+}
+
+
+#baseLayout .settingAside .nav-link img {
+    margin-left: 1rem;
+}
+
+#baseLayout .settingAside .nav-link span {
+    vertical-align: middle;
+}
+
+#baseLayout .settingHeader {
+    font-weight: bold;
+    font-size: 1.312rem;
+    text-align: right;
+    margin-top: 0.75rem;
+    color: #000000;
+}
+
+#baseLayout .editHeader {
+    margin-top: 3rem;
+    font-size: 1.25rem;
+    text-align: right;
+    font-weight: 600;
+}
+
+
+
+
+
+
+
+
+
+#baseLayout #mainFooter .bottom-nav {
+    width: 50%;
+}
+
+#baseLayout #mainFooter .bottom-nav a {
+    color: #282c34;
+}

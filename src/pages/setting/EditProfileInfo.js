@@ -73,6 +73,7 @@ const EditProfileInfo = () => {
 
             <Form onSubmit={handleSubmit}>
                 <FormGroup>
+<<<<<<< HEAD
                         <span className="ChangeImageWrapper">
                             <p>
                                 {staticName}
@@ -131,6 +132,12 @@ const EditProfileInfo = () => {
                     <button type="submit" className="btn" >
                         حفظ
                     </button>
+=======
+                    <label htmlFor="avatar">
+                    <img src={profilePic} alt=""/>
+                    </label>
+                    <input type="file" id="avatar"/>
+>>>>>>> parent of e157337... setting pages
                 </FormGroup>
             </Form>
         </>
