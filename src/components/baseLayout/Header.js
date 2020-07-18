@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {
     FormGroup,
     Input,
@@ -7,13 +7,32 @@ import {
     NavItem,
     NavLink,
 } from "reactstrap";
-import {logo} from "../../img/dashboard";
 import Form from "reactstrap/es/Form";
 import {brand, profilePic} from "../../img";
 import DropDownNav from "./DropDownNav";
+import Cookies from "universal-cookie/lib";
+import axios from "axios";
 
 
 const Header = () => {
+    const [userName , setUserName] = useState('name');
+
+    useEffect(() => {
+        const cookie = new Cookies();
+        const token = cookie.get('token');
+        const config = {
+            headers: {Authorization: `Bearer ${token}`}
+        };
+
+        axios.get('https://karaz6.herokuapp.com/api/user/profile', config)
+            .then(response => {
+                if (response.status === 200) {
+                    setUserName(response.data.user.name)
+                }
+            }).catch(error => {
+            console.log("profile error", error)
+        })
+    },[]);
     return (
         <header className="mainHeader" dir="rtl">
             <Navbar light expand className="custom-container py-0" style={{backgroundColor: "#FFF"}}>
@@ -40,7 +59,7 @@ const Header = () => {
                         <NavLink href="/components/">
                                 <span className="avatarWrapper">
                                     <img src={profilePic} alt="avatar" className="pic" />
-                                    <span className="userName">يمان المغني</span>
+                                    <span className="userName">{userName}</span>
                                 </span>
                         </NavLink>
                     </NavItem>
@@ -52,7 +71,7 @@ const Header = () => {
                             </span>
                         </NavLink>
                     </NavItem>
-                    <DropDownNav/>
+                    <DropDownNav name={userName}/>
                 </Nav>
             </Navbar>
         </header>

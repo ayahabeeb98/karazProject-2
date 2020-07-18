@@ -1,4 +1,4 @@
-#baseLayout {
+#baseLayout .avatarWrapper img.pic#baseLayout {
     font-family: 'Cairo', Arial, sans-serif;
 }
 
@@ -15,7 +15,7 @@
 }
 
 #baseLayout .avatarWrapper img.pic{
-    width: 30%;
+    width: 3rem;
     margin-left: 0.4rem;
 }
 

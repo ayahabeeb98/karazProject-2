@@ -12,7 +12,16 @@ import {
 import {activeUsers, newUser, visits} from '../../img/dashboard';
 import axios from 'axios';
 import {DateAndHour, DefaultDuration,DoughnutChart,HorizontalBarChart,LineChart} from './component';
+import * as Sentry from '@sentry/react';
 
+
+function FallbackComponent() {
+    return (
+      <div>An error has occured</div>
+    )
+  }
+
+  
 export default function MainDashboard() {
 
     //Card dropDown List State
@@ -83,7 +92,7 @@ export default function MainDashboard() {
                 duration = DefaultDuration;
         }
 
-        axios.post('https://karaz6.herokuapp.com/api/dashboard/count', reqData)
+        axios.post('https://karaz6.herokuapp.com/api/dashboard/count2zzz', reqData)
             .then(response => {
                 setLoading(false);
                 const pre = Math.round(response.data.precentage * 100) / 100;
@@ -93,14 +102,12 @@ export default function MainDashboard() {
                     duration
                 }) : c));
             })
-            .catch(error => {
-                console.log(error)
-            })
+           
     };
 
 
     return (
-        <>
+        <Sentry.ErrorBoundary fallback={FallbackComponent} showDialog>
             <Row xs="1" md="3">
                 <Col className="pr-0">
                     <Card body className="dashboardCard">
@@ -211,6 +218,6 @@ export default function MainDashboard() {
             <Row xs="1">
                 <LineChart/>
             </Row>
-        </>
+            </Sentry.ErrorBoundary>
     )
 }

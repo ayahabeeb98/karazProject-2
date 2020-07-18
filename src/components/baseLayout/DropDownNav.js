@@ -4,7 +4,7 @@ import {menu, profilePic,setting,help,payment,booking,saved,see,darkMode,logout}
 import Cookies from "universal-cookie/lib";
 import {Redirect,Link} from 'react-router-dom';
 
-const DropDownNav = () => {
+const DropDownNav = ({name}) => {
     const [cookie] = useState(new Cookies());
     const [removed,setRemoved] = useState(false);
     const handleLogout = () => {
@@ -27,7 +27,7 @@ const DropDownNav = () => {
                 <DropdownItem className="dropInfo">
                     <img src={profilePic} alt="avatar" className="pic"/>
                     <div className="nameAndStatus">
-                        <span className="userName">يمان المغني</span>
+                        <span className="userName">{name}</span>
                         <span className="activeStatus">نشط الآن</span>
                     </div>
                 </DropdownItem>
